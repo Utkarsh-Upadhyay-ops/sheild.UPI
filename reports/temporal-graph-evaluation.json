@@ -1,0 +1,297 @@
+{
+  "version": "TEMPORAL-GNN-SYN-2.1",
+  "seed": 96411,
+  "seeds": {
+    "training": 96411,
+    "validation": 96412,
+    "rareValidation": 96416,
+    "test": 96417,
+    "rareTrafficTest": 96418
+  },
+  "thresholdSelection": "Max rare-validation recall with broad-validation precision >=90% and rare-validation false positive rate <=0.5%; at least 20 broad positives",
+  "trainingGraphs": 12000,
+  "validationGraphs": 2000,
+  "testGraphs": 3000,
+  "threshold": 0.9792771084337349,
+  "validation": {
+    "precision": 0.9640365002683843,
+    "recall": 0.5964795748920625,
+    "averagePrecision": 0.9675255090402745,
+    "positivePrevalence": 0.12126459927507048,
+    "falsePositiveRate": 0.0030707181814015306,
+    "confusion": {
+      "tp": 1796,
+      "fp": 67,
+      "tn": 21752,
+      "fn": 1215
+    }
+  },
+  "rareValidation": {
+    "precision": 0.3843813387423935,
+    "recall": 0.6233552631578947,
+    "averagePrecision": 0.5062771053023026,
+    "positivePrevalence": 0.004919452063661594,
+    "falsePositiveRate": 0.0049356415114284085,
+    "confusion": {
+      "tp": 379,
+      "fp": 607,
+      "tn": 122376,
+      "fn": 229
+    }
+  },
+  "test": {
+    "precision": 0.9653018736988203,
+    "recall": 0.6149425287356322,
+    "averagePrecision": 0.9702175369450017,
+    "positivePrevalence": 0.12108235420067982,
+    "falsePositiveRate": 0.003045159718627242,
+    "confusion": {
+      "tp": 2782,
+      "fp": 100,
+      "tn": 32739,
+      "fn": 1742
+    }
+  },
+  "rareTrafficStress": {
+    "graphs": 8000,
+    "metrics": {
+      "precision": 0.41087962962962965,
+      "recall": 0.60580204778157,
+      "averagePrecision": 0.5078514228951727,
+      "positivePrevalence": 0.004734817879189425,
+      "falsePositiveRate": 0.004132231404958678,
+      "confusion": {
+        "tp": 355,
+        "fp": 509,
+        "tn": 122669,
+        "fn": 231
+      }
+    },
+    "scope": "Separate rare-pattern stress split, not representative bank traffic. No threshold retuning."
+  },
+  "enabledAsAuxiliaryReviewSignal": true,
+  "groups": [
+    {
+      "pattern": "normal",
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": null,
+        "positivePrevalence": 0.0,
+        "falsePositiveRate": 0.0,
+        "confusion": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 9128,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "pattern": "legitimate_hub",
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": null,
+        "positivePrevalence": 0.0,
+        "falsePositiveRate": 0.0,
+        "confusion": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 10266,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "pattern": "legitimate_cycle",
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": null,
+        "positivePrevalence": 0.0,
+        "falsePositiveRate": 0.022749273959341725,
+        "confusion": {
+          "tp": 0,
+          "fp": 94,
+          "tn": 4038,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "pattern": "fraud_ring",
+      "metrics": {
+        "precision": 1.0,
+        "recall": 0.4830172033524482,
+        "averagePrecision": 0.9988945791515156,
+        "positivePrevalence": 0.541308500477555,
+        "falsePositiveRate": 0.0,
+        "confusion": {
+          "tp": 1095,
+          "fp": 0,
+          "tn": 1921,
+          "fn": 1172
+        }
+      }
+    },
+    {
+      "pattern": "mule_forwarding",
+      "metrics": {
+        "precision": 1.0,
+        "recall": 0.836,
+        "averagePrecision": 0.9982435450246868,
+        "positivePrevalence": 0.09838646202282567,
+        "falsePositiveRate": 0.0,
+        "confusion": {
+          "tp": 418,
+          "fp": 0,
+          "tn": 4582,
+          "fn": 82
+        }
+      }
+    },
+    {
+      "pattern": "fund_chain",
+      "metrics": {
+        "precision": 0.9952941176470588,
+        "recall": 0.7222538417757541,
+        "averagePrecision": 0.9961533951518771,
+        "positivePrevalence": 0.38471644405517846,
+        "falsePositiveRate": 0.002135231316725979,
+        "confusion": {
+          "tp": 1269,
+          "fp": 6,
+          "tn": 2804,
+          "fn": 488
+        }
+      }
+    }
+  ],
+  "limitations": "Synthetic motif generator deliberately associates rapid timing and similar amounts with fraud. Split graphs are independent, but generated from the same assumptions. Legitimate transfers can share these motifs. Not real-world accuracy or proof of fraud. Existing graph model retained; this auxiliary layer can request verification only.",
+  "dataset": {
+    "kind": "Seeded synthetic graphs; no real bank data",
+    "splitIsolation": "Graph-specific account IDs and distinct random seeds across splits",
+    "trainingMethod": "100 epochs, shuffled 2048-account minibatches, CPU",
+    "splits": {
+      "train": {
+        "graphs": 12000,
+        "historicalTransfers": 126134,
+        "candidatePayments": 12000,
+        "accountObservations": 148913,
+        "positiveAccountLabels": 17925,
+        "patterns": {
+          "fraud_ring": 2000,
+          "fund_chain": 2000,
+          "legitimate_cycle": 2000,
+          "legitimate_hub": 2000,
+          "mule_forwarding": 2000,
+          "normal": 2000
+        }
+      },
+      "validation": {
+        "graphs": 2000,
+        "historicalTransfers": 21059,
+        "candidatePayments": 2000,
+        "accountObservations": 24830,
+        "positiveAccountLabels": 3011,
+        "patterns": {
+          "fraud_ring": 333,
+          "fund_chain": 333,
+          "legitimate_cycle": 333,
+          "legitimate_hub": 334,
+          "mule_forwarding": 333,
+          "normal": 334
+        }
+      },
+      "test": {
+        "graphs": 3000,
+        "historicalTransfers": 31763,
+        "candidatePayments": 3000,
+        "accountObservations": 37363,
+        "positiveAccountLabels": 4524,
+        "patterns": {
+          "fraud_ring": 500,
+          "fund_chain": 500,
+          "legitimate_cycle": 500,
+          "legitimate_hub": 500,
+          "mule_forwarding": 500,
+          "normal": 500
+        }
+      },
+      "rareTraffic": {
+        "graphs": 8000,
+        "historicalTransfers": 111889,
+        "candidatePayments": 8000,
+        "accountObservations": 123764,
+        "positiveAccountLabels": 586,
+        "patterns": {
+          "fraud_ring": 67,
+          "fund_chain": 66,
+          "legitimate_cycle": 2600,
+          "legitimate_hub": 2600,
+          "mule_forwarding": 67,
+          "normal": 2600
+        }
+      },
+      "rareValidation": {
+        "graphs": 8000,
+        "historicalTransfers": 111960,
+        "candidatePayments": 8000,
+        "accountObservations": 123591,
+        "positiveAccountLabels": 608,
+        "patterns": {
+          "fraud_ring": 67,
+          "fund_chain": 66,
+          "legitimate_cycle": 2600,
+          "legitimate_hub": 2600,
+          "mule_forwarding": 67,
+          "normal": 2600
+        }
+      }
+    },
+    "totalGraphs": 33000,
+    "totalHistoricalTransfers": 402805,
+    "totalCandidatePayments": 33000
+  },
+  "timingShiftStress": {
+    "description": "Untuned 3x slower historical movement; retained accounts only. Tests sensitivity to the 120 second feature window, not real banking generalisation.",
+    "metrics": {
+      "precision": 0.953880764904387,
+      "recall": 0.4138604197169351,
+      "averagePrecision": 0.9145077692042901,
+      "positivePrevalence": 0.17788002430766559,
+      "falsePositiveRate": 0.004329461457233369,
+      "confusion": {
+        "tp": 1696,
+        "fp": 82,
+        "tn": 18858,
+        "fn": 2402
+      }
+    }
+  },
+  "originalOnSameSplits": {
+    "test": {
+      "precision": 0.5248508946322068,
+      "recall": 0.058355437665782495,
+      "falsePositiveRate": 0.007277931727519108,
+      "confusion": {
+        "tp": 264,
+        "fp": 239,
+        "tn": 32600,
+        "fn": 4260
+      }
+    },
+    "rareTraffic": {
+      "precision": 0.02265625,
+      "recall": 0.04948805460750853,
+      "falsePositiveRate": 0.01015603435678449,
+      "confusion": {
+        "tp": 29,
+        "fp": 1251,
+        "tn": 121927,
+        "fn": 557
+      }
+    }
+  }
+}

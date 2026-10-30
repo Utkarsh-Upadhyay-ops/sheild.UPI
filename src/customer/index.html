@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#5a269b" />
+    <title>ShieldPay | Payments protected by UPI Shield</title>
+    <link rel="stylesheet" href="pay.css" />
+    <script src="shared-client.js" defer></script>
+    <script src="pay.js" defer></script>
+    <script src="shared-pay.js" defer></script>
+    <script src="shared-behavior.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="#home" class="brand">
+        <span class="mark">S</span>
+        <span>
+          ShieldPay
+          <small>Protected by UPI Shield</small>
+        </span>
+      </a>
+      <span class="environment">SANDBOX · NO REAL MONEY</span>
+      <a class="analyst" href="./#overview">Investigator desk ↗</a>
+    </header>
+    <main id="app"><p>Opening your payments workspace…</p></main>
+    <nav id="bottom" aria-label="Main navigation"></nav>
+    <footer>
+      Independent payment experience for demonstration. Not PhonePe or affiliated with a bank or
+      NPCI. Bank setup and settlement are simulated. Payments and review decisions use the shared
+      backend. Never enter a real UPI PIN.
+    </footer>
+    <div id="notice" role="status"></div>
+    <dialog id="modal"><div id="modalBody"></div></dialog>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#087b55" />
+    <meta
+      name="description"
+      content="Explore UPI Shield, an interactive fraud intelligence sandbox with machine learning, network analysis and case investigation."
+    />
+    <title>UPI Shield | Fraud Intelligence</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="engine.js" defer></script>
+    <script src="pipeline.js" defer></script>
+    <script src="intelligence.js" defer></script>
+    <script src="intelligence-ui.js" defer></script>
+    <script src="protection.js" defer></script>
+    <script src="protection-ui.js" defer></script>
+    <script src="shared-client.js" defer></script>
+    <script src="command-ui.js" defer></script>
+    <script src="payment-bridge.js" defer></script>
+    <script src="payment-cloud.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <button
+      id="menuBackdrop"
+      class="menu-backdrop"
+      aria-label="Close navigation"
+      tabindex="-1"
+      hidden
+    ></button>
+    <aside id="sidebar" aria-label="Main navigation">
+      <button class="iconbtn mobile closemenu" id="closeMenu" aria-label="Close navigation">
+        ×
+      </button>
+      <a class="brand" href="#overview" aria-label="UPI Shield overview">
+        <span class="brandmark">
+          <svg viewBox="0 0 32 38" fill="none" aria-hidden="true">
+            <path d="M16 2L29 7V18C29 26 23 32 16 36C9 32 3 26 3 18V7L16 2Z" fill="#14385D" />
+            <path d="M4 8L16 3L28 8" stroke="#EF9B43" stroke-width="3" stroke-linecap="round" />
+            <path d="M9 30L16 35L23 30" stroke="#15935F" stroke-width="3" stroke-linecap="round" />
+            <path
+              d="M10 18L14 22L23 12"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+        <span class="brandlockup">
+          <span class="brandname">
+            <img src="upi-logo.svg" width="84" height="30" alt="UPI" />
+            <span class="shieldword">Shield</span>
+          </span>
+          <small>FRAUD INTELLIGENCE</small>
+        </span>
+      </a>
+      <div class="navcaption">WORKSPACE</div>
+      <nav id="nav"></nav>
+      <div class="sidebottom">
+        <div class="orb">
+          <svg viewBox="0 0 32 38" fill="none" aria-hidden="true">
+            <path d="M16 2L29 7V18C29 26 23 32 16 36C9 32 3 26 3 18V7L16 2Z" fill="#14385D" />
+            <path d="M4 8L16 3L28 8" stroke="#EF9B43" stroke-width="3" stroke-linecap="round" />
+            <path d="M9 30L16 35L23 30" stroke="#15935F" stroke-width="3" stroke-linecap="round" />
+            <path
+              d="M10 18L14 22L23 12"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <b>UPI Shield Command Center</b>
+        <p>
+          Explore signals.
+          <br />
+          Inspect account activity.
+        </p>
+        <button class="sidebutton" id="tourBtn" data-shared="guide">Payment walkthrough</button>
+        <div class="sidefoot">UPI SHIELD / PAYMENT INTELLIGENCE</div>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header>
+        <button
+          class="iconbtn mobile"
+          id="menuBtn"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          ☰
+        </button>
+        <a class="mobile mobilebrand" href="#guide" aria-label="UPI Shield home">
+          <img src="upi-logo.svg" alt="UPI" width="62" height="23" />
+          <span>Shield</span>
+        </a>
+        <div class="breadcrumb">
+          Workspace
+          <span>/</span>
+          <b id="crumb">Overview</b>
+        </div>
+        <div class="headeractions"><a class="btn primary" href="./pay">Open ShieldPay ↗</a>
+          <label class="searchbox">
+            <span>⌕</span>
+            <input
+              id="globalSearch"
+              placeholder="Search transaction or account"
+              aria-label="Search transactions"
+            />
+            <kbd>↵</kbd>
+          </label>
+          <button class="iconbtn" id="helpBtn" aria-label="About UPI Shield">?</button>
+          <div class="upiidentity npci-header">
+            <img
+              src="npci-logo.svg"
+              width="140"
+              height="43"
+              alt="NPCI — National Payments Corporation of India"
+            />
+            <small>Independent demo · not affiliated</small>
+          </div>
+        </div>
+      </header>
+      <main id="main" tabindex="-1">
+        <section id="storageWarning" hidden role="alert" class="alertbanner">
+          <p id="storageMessage"></p>
+          <div class="actions">
+            <button class="btn tiny" id="exportStored">Export saved data</button>
+            <button class="btn tiny" id="exportSession">Export current session</button>
+            <button class="btn tiny" id="reloadWorkspace">Reload workspace</button>
+          </div>
+        </section>
+        <div id="loading">
+          <div class="loader"></div>
+          <h2>Loading your workspace</h2>
+          <p>Loading the local demo model…</p>
+        </div>
+        <div id="content"></div>
+      </main>
+      <footer>
+        UPI Shield · Synthetic sample data · No real payments · Not affiliated with NPCI. UPI is a
+        trademark of NPCI.
+      </footer>
+    </div>
+    <nav id="mobileNav" class="mobile-bottom" aria-label="Quick navigation"></nav>
+    <div id="toast" role="status"></div>
+    <dialog id="dialog" aria-label="Workspace details"><div id="dialogContent"></div></dialog>
+    <script>
+      window.addEventListener('error', () => {
+        let l = document.getElementById('loading');
+        if (l && !l.hidden)
+          l.innerHTML =
+            '<h2>Unable to load the workspace</h2><p>Refresh the page to try again.</p>';
+      });
+    </script>
+  </body>
+</html>

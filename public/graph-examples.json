@@ -1,0 +1,3183 @@
+{
+  "scope": "Read-only synthetic examples. Scored with the actual server models. Not customer ledger records; no settlement occurs.",
+  "examples": [
+    {
+      "id": "PAY-GRAPH-DEMO-1",
+      "sender": "hub-01",
+      "receiver": "hub-02",
+      "amount": 8500,
+      "timestamp": "2026-10-30T06:57:46.779Z",
+      "device": "familiar",
+      "title": "DEMO 1 · Mule network",
+      "description": "Several sources pay HUB 1 before a large onward request.",
+      "source": "Read-only synthetic example",
+      "status": "Held for review",
+      "isGraphExample": true,
+      "graphHistory": [
+        {
+          "sender": "demo-01",
+          "receiver": "hub-01",
+          "amount": 2000,
+          "timestamp": "2026-10-30T06:57:10.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-02",
+          "receiver": "hub-01",
+          "amount": 2000,
+          "timestamp": "2026-10-30T06:57:09.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-03",
+          "receiver": "hub-01",
+          "amount": 2000,
+          "timestamp": "2026-10-30T06:57:08.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-04",
+          "receiver": "hub-01",
+          "amount": 2000,
+          "timestamp": "2026-10-30T06:57:07.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-05",
+          "receiver": "hub-01",
+          "amount": 2000,
+          "timestamp": "2026-10-30T06:57:06.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-06",
+          "receiver": "hub-01",
+          "amount": 2000,
+          "timestamp": "2026-10-30T06:57:05.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-07",
+          "receiver": "hub-03",
+          "amount": 1800,
+          "timestamp": "2026-10-30T06:57:21.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-08",
+          "receiver": "hub-03",
+          "amount": 2200,
+          "timestamp": "2026-10-30T06:57:22.779Z",
+          "settled": true
+        },
+        {
+          "sender": "hub-03",
+          "receiver": "hub-01",
+          "amount": 3800,
+          "timestamp": "2026-10-30T06:57:30.779Z",
+          "settled": true
+        },
+        {
+          "sender": "hub-02",
+          "receiver": "demo-09",
+          "amount": 6000,
+          "timestamp": "2026-10-30T06:57:34.779Z",
+          "settled": true
+        }
+      ],
+      "assessment": {
+        "paymentId": "PAY-GRAPH-DEMO-1",
+        "decision": "Flag",
+        "modelScore": 0.7669050994561177,
+        "modelVersion": "RF-SYN-2.0-CAL",
+        "probabilityScope": "Calibrated on separate synthetic data only",
+        "signals": {
+          "amount": 8500,
+          "average": 550,
+          "velocity": 1,
+          "age": 0,
+          "newRecipient": true,
+          "newDevice": false,
+          "night": false,
+          "fanin": 7,
+          "rapid": true,
+          "behavior": 0
+        },
+        "profile": {
+          "count": 10,
+          "average": 545,
+          "median": 550,
+          "recipients": [
+            "demo-10",
+            "demo-11",
+            "demo-12",
+            "demo-13",
+            "demo-14",
+            "demo-15",
+            "demo-16",
+            "demo-17",
+            "demo-18",
+            "demo-19"
+          ],
+          "baselineAvailable": true
+        },
+        "graph": {
+          "fanin": 7,
+          "rapid": true,
+          "fanInPattern": true,
+          "cycle": false,
+          "cyclePath": [],
+          "windowSeconds": 120,
+          "evidence": [
+            {
+              "sender": "demo-01",
+              "receiver": "hub-01",
+              "amount": 2000,
+              "timestamp": "2026-10-30T06:57:10.779Z"
+            },
+            {
+              "sender": "demo-02",
+              "receiver": "hub-01",
+              "amount": 2000,
+              "timestamp": "2026-10-30T06:57:09.779Z"
+            },
+            {
+              "sender": "demo-03",
+              "receiver": "hub-01",
+              "amount": 2000,
+              "timestamp": "2026-10-30T06:57:08.779Z"
+            },
+            {
+              "sender": "demo-04",
+              "receiver": "hub-01",
+              "amount": 2000,
+              "timestamp": "2026-10-30T06:57:07.779Z"
+            },
+            {
+              "sender": "demo-05",
+              "receiver": "hub-01",
+              "amount": 2000,
+              "timestamp": "2026-10-30T06:57:06.779Z"
+            },
+            {
+              "sender": "demo-06",
+              "receiver": "hub-01",
+              "amount": 2000,
+              "timestamp": "2026-10-30T06:57:05.779Z"
+            },
+            {
+              "sender": "hub-03",
+              "receiver": "hub-01",
+              "amount": 3800,
+              "timestamp": "2026-10-30T06:57:30.779Z"
+            }
+          ]
+        },
+        "behavior": {
+          "available": false,
+          "deviation": 0
+        },
+        "reasons": [
+          "At least three senders paid this account within 120 seconds before this onward transfer.",
+          "The recipient is not present in this sender’s sample payment history.",
+          "The amount exceeds five times this sender’s typical (median) sample payment.",
+          "No measured interaction comparison was supplied; the demo uses a neutral behavior input.",
+          "Several incoming accounts converge before this onward payment."
+        ],
+        "contributions": [
+          {
+            "name": "Incoming account count",
+            "value": 0.43552419771571865,
+            "index": 6
+          },
+          {
+            "name": "Receiver account age",
+            "value": 0.38441730733081897,
+            "index": 2
+          },
+          {
+            "name": "New recipient",
+            "value": 0.11572878122551755,
+            "index": 3
+          },
+          {
+            "name": "Rapid onward transfer",
+            "value": 0.06487376983865556,
+            "index": 7
+          }
+        ],
+        "policy": {
+          "verify": 0.2,
+          "flag": 0.65
+        },
+        "timings": {
+          "featuresMs": 0.13805499999998005,
+          "graphMs": 0.420123000000018,
+          "behaviorMs": 0.0032249999999862666,
+          "scoringMs": 9.778914000000043,
+          "policyMs": 0.0161589999999876,
+          "serverTotalMs": 13.404749000000038,
+          "protectionMs": 2.3514590000000055
+        },
+        "settlementPermitted": false,
+        "demo": true,
+        "trustBoundary": "Stateless sandbox assessment using client supplied sample history; no bank authorisation or real settlement.",
+        "intelligence": {
+          "version": "INT-SYN-1.1",
+          "combinedRisk": 0.6140874284995512,
+          "combinedRiskScope": "Weighted research risk index, not a calibrated fraud probability",
+          "anomalyScore": 0.6574075619658257,
+          "anomalyEvidence": {
+            "version": "IF-SYN-2.1",
+            "threshold": 0.6671718249363614,
+            "unusual": false,
+            "scope": "Unusualness index, not fraud probability; verification only",
+            "features": [
+              {
+                "name": "Amount versus observed average",
+                "value": 15.454545454545455
+              },
+              {
+                "name": "Recent payment count",
+                "value": 1
+              },
+              {
+                "name": "New recipient",
+                "value": true
+              },
+              {
+                "name": "Experimental behavior deviation",
+                "available": false,
+                "value": null
+              }
+            ]
+          },
+          "graphModel": {
+            "sender": 0.09905410278205927,
+            "recipient": 0.0000037267566645029724,
+            "nodes": 12,
+            "edges": 10,
+            "senderId": "hub-01",
+            "recipientId": "hub-02",
+            "reviewThreshold": 0.9227751004016064,
+            "links": [
+              {
+                "sender": "demo-01",
+                "receiver": "hub-01",
+                "amount": 2000
+              },
+              {
+                "sender": "demo-02",
+                "receiver": "hub-01",
+                "amount": 2000
+              },
+              {
+                "sender": "demo-03",
+                "receiver": "hub-01",
+                "amount": 2000
+              },
+              {
+                "sender": "demo-04",
+                "receiver": "hub-01",
+                "amount": 2000
+              },
+              {
+                "sender": "demo-05",
+                "receiver": "hub-01",
+                "amount": 2000
+              },
+              {
+                "sender": "demo-06",
+                "receiver": "hub-01",
+                "amount": 2000
+              },
+              {
+                "sender": "demo-07",
+                "receiver": "hub-03",
+                "amount": 1800
+              },
+              {
+                "sender": "demo-08",
+                "receiver": "hub-03",
+                "amount": 2200
+              },
+              {
+                "sender": "hub-03",
+                "receiver": "hub-01",
+                "amount": 3800
+              },
+              {
+                "sender": "hub-02",
+                "receiver": "demo-09",
+                "amount": 6000
+              }
+            ],
+            "accounts": [
+              {
+                "id": "hub-01",
+                "risk": 0.09905410278205927
+              },
+              {
+                "id": "hub-03",
+                "risk": 0.043856238962865356
+              },
+              {
+                "id": "demo-07",
+                "risk": 0.00006558079198287444
+              },
+              {
+                "id": "demo-08",
+                "risk": 0.00006558079198287444
+              },
+              {
+                "id": "demo-09",
+                "risk": 0.000007815616912755813
+              },
+              {
+                "id": "demo-01",
+                "risk": 0.000003939390295161474
+              },
+              {
+                "id": "demo-02",
+                "risk": 0.000003939390295161474
+              },
+              {
+                "id": "demo-03",
+                "risk": 0.000003939390295161474
+              },
+              {
+                "id": "demo-04",
+                "risk": 0.000003939390295161474
+              },
+              {
+                "id": "demo-05",
+                "risk": 0.000003939390295161474
+              },
+              {
+                "id": "demo-06",
+                "risk": 0.000003939390295161474
+              },
+              {
+                "id": "hub-02",
+                "risk": 0.0000037267566645029724
+              }
+            ]
+          },
+          "recipientRisk": 0.35000242239183194,
+          "device": {
+            "newDevice": false,
+            "accountsOnDevice": 1,
+            "sharedDevice": false,
+            "source": "User supplied synthetic session context, not trusted device attestation"
+          },
+          "geo": {
+            "available": false,
+            "impossibleTravel": false
+          },
+          "decision": "Flag",
+          "reasons": [],
+          "scoringMs": 9.67780700000003,
+          "calibrationWarning": "Graph model is evaluated on held out synthetic graphs only; never used alone to block a payment.",
+          "temporalGraphModel": {
+            "version": "TEMPORAL-GNN-SYN-2.1",
+            "sender": 0.9995512335713024,
+            "recipient": 0.38538483905912374,
+            "accounts": [
+              {
+                "id": "hub-01",
+                "evidence": {
+                  "incomingDiversity": 7,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.8666666666666667,
+                  "circularPath": false
+                },
+                "risk": 0.9995512335713024
+              },
+              {
+                "id": "hub-02",
+                "evidence": {
+                  "incomingDiversity": 1,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.38538483905912374
+              },
+              {
+                "id": "hub-03",
+                "evidence": {
+                  "incomingDiversity": 2,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.9333333333333333,
+                  "circularPath": false
+                },
+                "risk": 0.023863982313089824
+              },
+              {
+                "id": "demo-09",
+                "evidence": {
+                  "incomingDiversity": 1,
+                  "outgoingDiversity": 0,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0001624871209877409
+              },
+              {
+                "id": "demo-08",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.00001692859572442446
+              },
+              {
+                "id": "demo-07",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000015886191882719647
+              },
+              {
+                "id": "demo-01",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000010067590987578507
+              },
+              {
+                "id": "demo-02",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000010067590987578507
+              },
+              {
+                "id": "demo-03",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000010067590987578507
+              },
+              {
+                "id": "demo-04",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000010067590987578507
+              },
+              {
+                "id": "demo-05",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000010067590987578507
+              },
+              {
+                "id": "demo-06",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000010067590987578507
+              }
+            ],
+            "reviewThreshold": 0.9792771084337349,
+            "nodes": 12,
+            "messagePassingHops": 2,
+            "candidateIncluded": true,
+            "scope": "Synthetic temporal graph index. Candidate edge is hypothetical; not settled. Review signal only."
+          }
+        },
+        "protection": {
+          "decision": "Flag",
+          "triggered": [
+            {
+              "id": "mule",
+              "name": "Mule account network",
+              "signal": "fanIn",
+              "action": "Hold",
+              "reason": "Several incoming accounts converge before this onward payment.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            }
+          ],
+          "checks": [
+            {
+              "id": "qr",
+              "name": "QR code payment scam",
+              "signal": "directionMismatch",
+              "action": "Hold",
+              "reason": "The payment direction conflicts with the stated intention.",
+              "requires": "Trusted intent and payment direction",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "collect",
+              "name": "Unexpected collect request",
+              "signal": "unexpectedCollect",
+              "action": "Verify",
+              "reason": "An unrecognised collect request needs independent confirmation.",
+              "requires": "Collect request metadata",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "refund",
+              "name": "Fake cashback or refund",
+              "signal": "payToReceive",
+              "action": "Hold",
+              "reason": "The flow asks for a debit to receive a refund or reward.",
+              "requires": "Trusted offer and payment direction",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "phishing",
+              "name": "Phishing link",
+              "signal": "untrustedCredentialOrigin",
+              "action": "Hold",
+              "reason": "A credential flow was initiated from an unverified origin.",
+              "requires": "App origin or browser security integration",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "support",
+              "name": "Fake customer support",
+              "signal": "unverifiedSupportPayment",
+              "action": "Verify",
+              "reason": "An unverified support contact is requesting a payment.",
+              "requires": "Verified support channel context",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "remote",
+              "name": "Screen sharing or remote access",
+              "signal": "remoteAccessActive",
+              "action": "Hold",
+              "reason": "A remote access signal is present during payment.",
+              "requires": "Native device security integration",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "sim",
+              "name": "SIM swap",
+              "signal": "recentSimChange",
+              "action": "Verify",
+              "reason": "A recent SIM change requires additional authentication.",
+              "requires": "Telecom or bank supplied SIM signal",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "apk",
+              "name": "Malicious app",
+              "signal": "unsafeAppAttestation",
+              "action": "Hold",
+              "reason": "Device app attestation reports an unsafe application environment.",
+              "requires": "Native platform attestation",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "takeover",
+              "name": "Account takeover",
+              "signal": "sessionMismatch",
+              "action": "Verify",
+              "reason": "Session identity differs from the established profile.",
+              "requires": "Trusted session and device history",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "mule",
+              "name": "Mule account network",
+              "signal": "fanIn",
+              "action": "Hold",
+              "reason": "Several incoming accounts converge before this onward payment.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "ring",
+              "name": "Coordinated fraud ring",
+              "signal": "cycle",
+              "action": "Hold",
+              "reason": "The candidate payment closes a recent transfer cycle.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "chain",
+              "name": "Multi hop fund transfers",
+              "signal": "chain",
+              "action": "Verify",
+              "reason": "The sender has a recent inbound transfer chain of at least three hops.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "split",
+              "name": "Transaction splitting",
+              "signal": "split",
+              "action": "Verify",
+              "reason": "Several recent payments have a high combined value relative to typical spending.",
+              "requires": "Sender transaction history",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "merchant",
+              "name": "Fake online merchant",
+              "signal": "unverifiedMerchant",
+              "action": "Verify",
+              "reason": "Merchant identity has not been independently verified.",
+              "requires": "Merchant verification service",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "replacement",
+              "name": "Merchant QR replacement",
+              "signal": "merchantIdentityMismatch",
+              "action": "Hold",
+              "reason": "The scanned recipient conflicts with the expected merchant identity.",
+              "requires": "Trusted merchant identity and scanned recipient",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "investment",
+              "name": "Investment or trading scam",
+              "signal": "guaranteedReturnClaim",
+              "action": "Verify",
+              "reason": "A guaranteed return claim needs independent provider verification.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "job",
+              "name": "Fake job or task scam",
+              "signal": "payToUnlockEarnings",
+              "action": "Hold",
+              "reason": "The request asks for a payment to unlock a job or supposed earnings.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "impersonation",
+              "name": "Friend or official impersonation",
+              "signal": "unverifiedUrgentRequest",
+              "action": "Verify",
+              "reason": "An urgent request has not been confirmed through a separate trusted channel.",
+              "requires": "Independent contact verification",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "extortion",
+              "name": "Digital arrest extortion",
+              "signal": "coerciveOfficialDemand",
+              "action": "Hold",
+              "reason": "A coercive official claim is requesting a transfer.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "bot",
+              "name": "Automated or bot abuse",
+              "signal": "bot",
+              "action": "Hold",
+              "reason": "Payment attempt velocity exceeds the configured demonstration limit.",
+              "requires": "Recent sender requests",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            }
+          ],
+          "chainPath": null,
+          "scope": "Demonstration policies on supplied sample context. Missing signals are unavailable, not safe. Flags are not proof of fraud."
+        }
+      }
+    },
+    {
+      "id": "PAY-GRAPH-DEMO-2",
+      "sender": "hub-01",
+      "receiver": "demo-01",
+      "amount": 2700,
+      "timestamp": "2026-10-30T06:57:46.779Z",
+      "device": "familiar",
+      "title": "DEMO 2 · Circular transfers",
+      "description": "The pending transfer would close a circular path.",
+      "source": "Read-only synthetic example",
+      "status": "Held for review",
+      "isGraphExample": true,
+      "graphHistory": [
+        {
+          "sender": "demo-01",
+          "receiver": "demo-02",
+          "amount": 3000,
+          "timestamp": "2026-10-30T06:57:16.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-02",
+          "receiver": "hub-03",
+          "amount": 2900,
+          "timestamp": "2026-10-30T06:57:21.779Z",
+          "settled": true
+        },
+        {
+          "sender": "hub-03",
+          "receiver": "hub-01",
+          "amount": 2800,
+          "timestamp": "2026-10-30T06:57:26.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-03",
+          "receiver": "demo-01",
+          "amount": 700,
+          "timestamp": "2026-10-30T06:56:46.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-04",
+          "receiver": "hub-03",
+          "amount": 500,
+          "timestamp": "2026-10-30T06:56:56.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-05",
+          "receiver": "demo-04",
+          "amount": 300,
+          "timestamp": "2026-10-30T06:57:06.779Z",
+          "settled": true
+        }
+      ],
+      "assessment": {
+        "paymentId": "PAY-GRAPH-DEMO-2",
+        "decision": "Flag",
+        "modelScore": 0.018717740012557958,
+        "modelVersion": "RF-SYN-2.0-CAL",
+        "probabilityScope": "Calibrated on separate synthetic data only",
+        "signals": {
+          "amount": 2700,
+          "average": 550,
+          "velocity": 1,
+          "age": 0,
+          "newRecipient": true,
+          "newDevice": false,
+          "night": false,
+          "fanin": 1,
+          "rapid": true,
+          "behavior": 0
+        },
+        "profile": {
+          "count": 10,
+          "average": 545,
+          "median": 550,
+          "recipients": [
+            "demo-10",
+            "demo-11",
+            "demo-12",
+            "demo-13",
+            "demo-14",
+            "demo-15",
+            "demo-16",
+            "demo-17",
+            "demo-18",
+            "demo-19"
+          ],
+          "baselineAvailable": true
+        },
+        "graph": {
+          "fanin": 1,
+          "rapid": true,
+          "fanInPattern": false,
+          "cycle": true,
+          "cyclePath": [
+            "hub-01",
+            "demo-01",
+            "demo-02",
+            "hub-03",
+            "hub-01"
+          ],
+          "windowSeconds": 120,
+          "evidence": [
+            {
+              "sender": "hub-03",
+              "receiver": "hub-01",
+              "amount": 2800,
+              "timestamp": "2026-10-30T06:57:26.779Z"
+            }
+          ]
+        },
+        "behavior": {
+          "available": false,
+          "deviation": 0
+        },
+        "reasons": [
+          "This payment completes a transfer cycle within the recent account graph.",
+          "The recipient is not present in this sender’s sample payment history.",
+          "No measured interaction comparison was supplied; the demo uses a neutral behavior input.",
+          "The candidate payment closes a recent transfer cycle.",
+          "The sender has a recent inbound transfer chain of at least three hops."
+        ],
+        "contributions": [
+          {
+            "name": "Receiver account age",
+            "value": 0.018702834627136646,
+            "index": 2
+          },
+          {
+            "name": "Payment size vs usual",
+            "value": 0.018646832975464166,
+            "index": 0
+          },
+          {
+            "name": "Rapid onward transfer",
+            "value": 0.018037206831461358,
+            "index": 7
+          }
+        ],
+        "policy": {
+          "verify": 0.2,
+          "flag": 0.65
+        },
+        "timings": {
+          "featuresMs": 0.0221130000000187,
+          "graphMs": 0.02840299999999729,
+          "behaviorMs": 0.0019649999999842294,
+          "scoringMs": 1.1071439999999768,
+          "policyMs": 0.005125999999989972,
+          "serverTotalMs": 1.9495359999999948,
+          "protectionMs": 0.06377399999999511
+        },
+        "settlementPermitted": false,
+        "demo": true,
+        "trustBoundary": "Stateless sandbox assessment using client supplied sample history; no bank authorisation or real settlement.",
+        "intelligence": {
+          "version": "INT-SYN-1.1",
+          "combinedRisk": 0.12075206940612866,
+          "combinedRiskScope": "Weighted research risk index, not a calibrated fraud probability",
+          "anomalyScore": 0.6232376738760471,
+          "anomalyEvidence": {
+            "version": "IF-SYN-2.1",
+            "threshold": 0.6671718249363614,
+            "unusual": false,
+            "scope": "Unusualness index, not fraud probability; verification only",
+            "features": [
+              {
+                "name": "Amount versus observed average",
+                "value": 4.909090909090909
+              },
+              {
+                "name": "Recent payment count",
+                "value": 1
+              },
+              {
+                "name": "New recipient",
+                "value": true
+              },
+              {
+                "name": "Experimental behavior deviation",
+                "available": false,
+                "value": null
+              }
+            ]
+          },
+          "graphModel": {
+            "sender": 0.0002893714436702274,
+            "recipient": 0.17259023528939588,
+            "nodes": 7,
+            "edges": 6,
+            "senderId": "hub-01",
+            "recipientId": "demo-01",
+            "reviewThreshold": 0.9227751004016064,
+            "links": [
+              {
+                "sender": "demo-01",
+                "receiver": "demo-02",
+                "amount": 3000
+              },
+              {
+                "sender": "demo-02",
+                "receiver": "hub-03",
+                "amount": 2900
+              },
+              {
+                "sender": "hub-03",
+                "receiver": "hub-01",
+                "amount": 2800
+              },
+              {
+                "sender": "demo-03",
+                "receiver": "demo-01",
+                "amount": 700
+              },
+              {
+                "sender": "demo-04",
+                "receiver": "hub-03",
+                "amount": 500
+              },
+              {
+                "sender": "demo-05",
+                "receiver": "demo-04",
+                "amount": 300
+              }
+            ],
+            "accounts": [
+              {
+                "id": "demo-02",
+                "risk": 0.782764454136628
+              },
+              {
+                "id": "hub-03",
+                "risk": 0.7038767533139038
+              },
+              {
+                "id": "demo-04",
+                "risk": 0.18048836283402767
+              },
+              {
+                "id": "demo-01",
+                "risk": 0.17259023528939588
+              },
+              {
+                "id": "hub-01",
+                "risk": 0.0002893714436702274
+              },
+              {
+                "id": "demo-03",
+                "risk": 0.00006062756119862892
+              },
+              {
+                "id": "demo-05",
+                "risk": 0.00006062756119862892
+              }
+            ]
+          },
+          "recipientRisk": 0.46218365293810737,
+          "device": {
+            "newDevice": false,
+            "accountsOnDevice": 1,
+            "sharedDevice": false,
+            "source": "User supplied synthetic session context, not trusted device attestation"
+          },
+          "geo": {
+            "available": false,
+            "impossibleTravel": false
+          },
+          "decision": "Flag",
+          "reasons": [],
+          "scoringMs": 1.0763999999999783,
+          "calibrationWarning": "Graph model is evaluated on held out synthetic graphs only; never used alone to block a payment.",
+          "temporalGraphModel": {
+            "version": "TEMPORAL-GNN-SYN-2.1",
+            "sender": 0.833474336433173,
+            "recipient": 0.9497608114112681,
+            "accounts": [
+              {
+                "id": "demo-01",
+                "evidence": {
+                  "incomingDiversity": 2,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.75,
+                  "circularPath": true
+                },
+                "risk": 0.9497608114112681
+              },
+              {
+                "id": "hub-03",
+                "evidence": {
+                  "incomingDiversity": 2,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.9583333333333334,
+                  "circularPath": true
+                },
+                "risk": 0.9179253210117517
+              },
+              {
+                "id": "demo-02",
+                "evidence": {
+                  "incomingDiversity": 1,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.9583333333333334,
+                  "circularPath": true
+                },
+                "risk": 0.911793386134288
+              },
+              {
+                "id": "hub-01",
+                "evidence": {
+                  "incomingDiversity": 1,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.8333333333333334,
+                  "circularPath": true
+                },
+                "risk": 0.833474336433173
+              },
+              {
+                "id": "demo-04",
+                "evidence": {
+                  "incomingDiversity": 1,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.004210706802908728
+              },
+              {
+                "id": "demo-03",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.00005632737549394032
+              },
+              {
+                "id": "demo-05",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000004352736612989486
+              }
+            ],
+            "reviewThreshold": 0.9792771084337349,
+            "nodes": 7,
+            "messagePassingHops": 2,
+            "candidateIncluded": true,
+            "scope": "Synthetic temporal graph index. Candidate edge is hypothetical; not settled. Review signal only."
+          }
+        },
+        "protection": {
+          "decision": "Flag",
+          "triggered": [
+            {
+              "id": "ring",
+              "name": "Coordinated fraud ring",
+              "signal": "cycle",
+              "action": "Hold",
+              "reason": "The candidate payment closes a recent transfer cycle.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "chain",
+              "name": "Multi hop fund transfers",
+              "signal": "chain",
+              "action": "Verify",
+              "reason": "The sender has a recent inbound transfer chain of at least three hops.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            }
+          ],
+          "checks": [
+            {
+              "id": "qr",
+              "name": "QR code payment scam",
+              "signal": "directionMismatch",
+              "action": "Hold",
+              "reason": "The payment direction conflicts with the stated intention.",
+              "requires": "Trusted intent and payment direction",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "collect",
+              "name": "Unexpected collect request",
+              "signal": "unexpectedCollect",
+              "action": "Verify",
+              "reason": "An unrecognised collect request needs independent confirmation.",
+              "requires": "Collect request metadata",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "refund",
+              "name": "Fake cashback or refund",
+              "signal": "payToReceive",
+              "action": "Hold",
+              "reason": "The flow asks for a debit to receive a refund or reward.",
+              "requires": "Trusted offer and payment direction",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "phishing",
+              "name": "Phishing link",
+              "signal": "untrustedCredentialOrigin",
+              "action": "Hold",
+              "reason": "A credential flow was initiated from an unverified origin.",
+              "requires": "App origin or browser security integration",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "support",
+              "name": "Fake customer support",
+              "signal": "unverifiedSupportPayment",
+              "action": "Verify",
+              "reason": "An unverified support contact is requesting a payment.",
+              "requires": "Verified support channel context",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "remote",
+              "name": "Screen sharing or remote access",
+              "signal": "remoteAccessActive",
+              "action": "Hold",
+              "reason": "A remote access signal is present during payment.",
+              "requires": "Native device security integration",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "sim",
+              "name": "SIM swap",
+              "signal": "recentSimChange",
+              "action": "Verify",
+              "reason": "A recent SIM change requires additional authentication.",
+              "requires": "Telecom or bank supplied SIM signal",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "apk",
+              "name": "Malicious app",
+              "signal": "unsafeAppAttestation",
+              "action": "Hold",
+              "reason": "Device app attestation reports an unsafe application environment.",
+              "requires": "Native platform attestation",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "takeover",
+              "name": "Account takeover",
+              "signal": "sessionMismatch",
+              "action": "Verify",
+              "reason": "Session identity differs from the established profile.",
+              "requires": "Trusted session and device history",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "mule",
+              "name": "Mule account network",
+              "signal": "fanIn",
+              "action": "Hold",
+              "reason": "Several incoming accounts converge before this onward payment.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "ring",
+              "name": "Coordinated fraud ring",
+              "signal": "cycle",
+              "action": "Hold",
+              "reason": "The candidate payment closes a recent transfer cycle.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "chain",
+              "name": "Multi hop fund transfers",
+              "signal": "chain",
+              "action": "Verify",
+              "reason": "The sender has a recent inbound transfer chain of at least three hops.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "split",
+              "name": "Transaction splitting",
+              "signal": "split",
+              "action": "Verify",
+              "reason": "Several recent payments have a high combined value relative to typical spending.",
+              "requires": "Sender transaction history",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "merchant",
+              "name": "Fake online merchant",
+              "signal": "unverifiedMerchant",
+              "action": "Verify",
+              "reason": "Merchant identity has not been independently verified.",
+              "requires": "Merchant verification service",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "replacement",
+              "name": "Merchant QR replacement",
+              "signal": "merchantIdentityMismatch",
+              "action": "Hold",
+              "reason": "The scanned recipient conflicts with the expected merchant identity.",
+              "requires": "Trusted merchant identity and scanned recipient",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "investment",
+              "name": "Investment or trading scam",
+              "signal": "guaranteedReturnClaim",
+              "action": "Verify",
+              "reason": "A guaranteed return claim needs independent provider verification.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "job",
+              "name": "Fake job or task scam",
+              "signal": "payToUnlockEarnings",
+              "action": "Hold",
+              "reason": "The request asks for a payment to unlock a job or supposed earnings.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "impersonation",
+              "name": "Friend or official impersonation",
+              "signal": "unverifiedUrgentRequest",
+              "action": "Verify",
+              "reason": "An urgent request has not been confirmed through a separate trusted channel.",
+              "requires": "Independent contact verification",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "extortion",
+              "name": "Digital arrest extortion",
+              "signal": "coerciveOfficialDemand",
+              "action": "Hold",
+              "reason": "A coercive official claim is requesting a transfer.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "bot",
+              "name": "Automated or bot abuse",
+              "signal": "bot",
+              "action": "Hold",
+              "reason": "Payment attempt velocity exceeds the configured demonstration limit.",
+              "requires": "Recent sender requests",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            }
+          ],
+          "chainPath": [
+            "demo-01",
+            "demo-02",
+            "hub-03",
+            "hub-01"
+          ],
+          "scope": "Demonstration policies on supplied sample context. Missing signals are unavailable, not safe. Flags are not proof of fraud."
+        }
+      }
+    },
+    {
+      "id": "PAY-GRAPH-DEMO-3",
+      "sender": "hub-01",
+      "receiver": "hub-02",
+      "amount": 500,
+      "timestamp": "2026-10-30T06:57:46.779Z",
+      "device": "familiar",
+      "title": "DEMO 3 · Routine payments",
+      "description": "Ordinary varied transfers illustrate why a busy account alone is not fraud.",
+      "source": "Read-only synthetic example",
+      "status": "Allowed",
+      "isGraphExample": true,
+      "graphHistory": [
+        {
+          "sender": "demo-01",
+          "receiver": "hub-03",
+          "amount": 150,
+          "timestamp": "2026-10-30T06:55:57.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-02",
+          "receiver": "hub-03",
+          "amount": 200,
+          "timestamp": "2026-10-30T06:55:58.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-03",
+          "receiver": "hub-03",
+          "amount": 250,
+          "timestamp": "2026-10-30T06:55:59.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-04",
+          "receiver": "hub-03",
+          "amount": 300,
+          "timestamp": "2026-10-30T06:56:00.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-05",
+          "receiver": "hub-03",
+          "amount": 350,
+          "timestamp": "2026-10-30T06:56:01.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-06",
+          "receiver": "hub-03",
+          "amount": 400,
+          "timestamp": "2026-10-30T06:56:02.779Z",
+          "settled": true
+        },
+        {
+          "sender": "hub-03",
+          "receiver": "demo-07",
+          "amount": 300,
+          "timestamp": "2026-10-30T06:56:06.779Z",
+          "settled": true
+        },
+        {
+          "sender": "demo-08",
+          "receiver": "hub-01",
+          "amount": 250,
+          "timestamp": "2026-10-30T06:56:16.779Z",
+          "settled": true
+        }
+      ],
+      "assessment": {
+        "paymentId": "PAY-GRAPH-DEMO-3",
+        "decision": "Allow",
+        "modelScore": 0.00007090703709379232,
+        "modelVersion": "RF-SYN-2.0-CAL",
+        "probabilityScope": "Calibrated on separate synthetic data only",
+        "signals": {
+          "amount": 500,
+          "average": 550,
+          "velocity": 1,
+          "age": 0,
+          "newRecipient": true,
+          "newDevice": false,
+          "night": false,
+          "fanin": 1,
+          "rapid": true,
+          "behavior": 0
+        },
+        "profile": {
+          "count": 10,
+          "average": 545,
+          "median": 550,
+          "recipients": [
+            "demo-10",
+            "demo-11",
+            "demo-12",
+            "demo-13",
+            "demo-14",
+            "demo-15",
+            "demo-16",
+            "demo-17",
+            "demo-18",
+            "demo-19"
+          ],
+          "baselineAvailable": true
+        },
+        "graph": {
+          "fanin": 1,
+          "rapid": true,
+          "fanInPattern": false,
+          "cycle": false,
+          "cyclePath": [],
+          "windowSeconds": 120,
+          "evidence": [
+            {
+              "sender": "demo-08",
+              "receiver": "hub-01",
+              "amount": 250,
+              "timestamp": "2026-10-30T06:56:16.779Z"
+            }
+          ]
+        },
+        "behavior": {
+          "available": false,
+          "deviation": 0
+        },
+        "reasons": [
+          "The recipient is not present in this sender’s sample payment history.",
+          "No measured interaction comparison was supplied; the demo uses a neutral behavior input."
+        ],
+        "contributions": [],
+        "policy": {
+          "verify": 0.2,
+          "flag": 0.65
+        },
+        "timings": {
+          "featuresMs": 0.021166999999991276,
+          "graphMs": 0.02879000000001497,
+          "behaviorMs": 0.0018629999999859592,
+          "scoringMs": 1.171467999999976,
+          "policyMs": 0.0041329999999959455,
+          "serverTotalMs": 1.5995849999999905,
+          "protectionMs": 0.1484350000000063
+        },
+        "settlementPermitted": true,
+        "demo": true,
+        "trustBoundary": "Stateless sandbox assessment using client supplied sample history; no bank authorisation or real settlement.",
+        "intelligence": {
+          "version": "INT-SYN-1.1",
+          "combinedRisk": 0.08773174181044928,
+          "combinedRiskScope": "Weighted research risk index, not a calibrated fraud probability",
+          "anomalyScore": 0.52684259674365,
+          "anomalyEvidence": {
+            "version": "IF-SYN-2.1",
+            "threshold": 0.6671718249363614,
+            "unusual": false,
+            "scope": "Unusualness index, not fraud probability; verification only",
+            "features": [
+              {
+                "name": "Amount versus observed average",
+                "value": 0.9090909090909091
+              },
+              {
+                "name": "Recent payment count",
+                "value": 1
+              },
+              {
+                "name": "New recipient",
+                "value": true
+              },
+              {
+                "name": "Experimental behavior deviation",
+                "available": false,
+                "value": null
+              }
+            ]
+          },
+          "graphModel": {
+            "sender": 0.000007815616912755813,
+            "recipient": 0.000003387991329221079,
+            "nodes": 11,
+            "edges": 8,
+            "senderId": "hub-01",
+            "recipientId": "hub-02",
+            "reviewThreshold": 0.9227751004016064,
+            "links": [
+              {
+                "sender": "demo-01",
+                "receiver": "hub-03",
+                "amount": 150
+              },
+              {
+                "sender": "demo-02",
+                "receiver": "hub-03",
+                "amount": 200
+              },
+              {
+                "sender": "demo-03",
+                "receiver": "hub-03",
+                "amount": 250
+              },
+              {
+                "sender": "demo-04",
+                "receiver": "hub-03",
+                "amount": 300
+              },
+              {
+                "sender": "demo-05",
+                "receiver": "hub-03",
+                "amount": 350
+              },
+              {
+                "sender": "demo-06",
+                "receiver": "hub-03",
+                "amount": 400
+              },
+              {
+                "sender": "hub-03",
+                "receiver": "demo-07",
+                "amount": 300
+              },
+              {
+                "sender": "demo-08",
+                "receiver": "hub-01",
+                "amount": 250
+              }
+            ],
+            "accounts": [
+              {
+                "id": "hub-03",
+                "risk": 0.8570791373980927
+              },
+              {
+                "id": "demo-07",
+                "risk": 0.00039613583108459745
+              },
+              {
+                "id": "demo-01",
+                "risk": 0.0000897844204472461
+              },
+              {
+                "id": "demo-02",
+                "risk": 0.0000897844204472461
+              },
+              {
+                "id": "demo-03",
+                "risk": 0.0000897844204472461
+              },
+              {
+                "id": "demo-04",
+                "risk": 0.0000897844204472461
+              },
+              {
+                "id": "demo-05",
+                "risk": 0.0000897844204472461
+              },
+              {
+                "id": "demo-06",
+                "risk": 0.0000897844204472461
+              },
+              {
+                "id": "hub-01",
+                "risk": 0.000007815616912755813
+              },
+              {
+                "id": "demo-08",
+                "risk": 0.0000037267566645029724
+              },
+              {
+                "id": "hub-02",
+                "risk": 0.000003387991329221079
+              }
+            ]
+          },
+          "recipientRisk": 0.350002202194364,
+          "device": {
+            "newDevice": false,
+            "accountsOnDevice": 1,
+            "sharedDevice": false,
+            "source": "User supplied synthetic session context, not trusted device attestation"
+          },
+          "geo": {
+            "available": false,
+            "impossibleTravel": false
+          },
+          "decision": "Allow",
+          "reasons": [],
+          "scoringMs": 1.1646659999999827,
+          "calibrationWarning": "Graph model is evaluated on held out synthetic graphs only; never used alone to block a payment.",
+          "temporalGraphModel": {
+            "version": "TEMPORAL-GNN-SYN-2.1",
+            "sender": 0.0010255813966902779,
+            "recipient": 0.0000046579517345081196,
+            "accounts": [
+              {
+                "id": "hub-03",
+                "evidence": {
+                  "incomingDiversity": 6,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.9666666666666667,
+                  "circularPath": false
+                },
+                "risk": 0.2803528156447052
+              },
+              {
+                "id": "hub-01",
+                "evidence": {
+                  "incomingDiversity": 1,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.25,
+                  "circularPath": false
+                },
+                "risk": 0.0010255813966902779
+              },
+              {
+                "id": "demo-07",
+                "evidence": {
+                  "incomingDiversity": 1,
+                  "outgoingDiversity": 0,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.00004547709920778277
+              },
+              {
+                "id": "demo-08",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000008076787165142927
+              },
+              {
+                "id": "hub-02",
+                "evidence": {
+                  "incomingDiversity": 1,
+                  "outgoingDiversity": 0,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000046579517345081196
+              },
+              {
+                "id": "demo-06",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000001190584276424078
+              },
+              {
+                "id": "demo-05",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000001182263671080373
+              },
+              {
+                "id": "demo-04",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000011740012156663957
+              },
+              {
+                "id": "demo-03",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000011657965037926715
+              },
+              {
+                "id": "demo-02",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000011576491319098288
+              },
+              {
+                "id": "demo-01",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000011495586992887455
+              }
+            ],
+            "reviewThreshold": 0.9792771084337349,
+            "nodes": 11,
+            "messagePassingHops": 2,
+            "candidateIncluded": true,
+            "scope": "Synthetic temporal graph index. Candidate edge is hypothetical; not settled. Review signal only."
+          }
+        },
+        "protection": {
+          "decision": "Allow",
+          "triggered": [],
+          "checks": [
+            {
+              "id": "qr",
+              "name": "QR code payment scam",
+              "signal": "directionMismatch",
+              "action": "Hold",
+              "reason": "The payment direction conflicts with the stated intention.",
+              "requires": "Trusted intent and payment direction",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "collect",
+              "name": "Unexpected collect request",
+              "signal": "unexpectedCollect",
+              "action": "Verify",
+              "reason": "An unrecognised collect request needs independent confirmation.",
+              "requires": "Collect request metadata",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "refund",
+              "name": "Fake cashback or refund",
+              "signal": "payToReceive",
+              "action": "Hold",
+              "reason": "The flow asks for a debit to receive a refund or reward.",
+              "requires": "Trusted offer and payment direction",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "phishing",
+              "name": "Phishing link",
+              "signal": "untrustedCredentialOrigin",
+              "action": "Hold",
+              "reason": "A credential flow was initiated from an unverified origin.",
+              "requires": "App origin or browser security integration",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "support",
+              "name": "Fake customer support",
+              "signal": "unverifiedSupportPayment",
+              "action": "Verify",
+              "reason": "An unverified support contact is requesting a payment.",
+              "requires": "Verified support channel context",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "remote",
+              "name": "Screen sharing or remote access",
+              "signal": "remoteAccessActive",
+              "action": "Hold",
+              "reason": "A remote access signal is present during payment.",
+              "requires": "Native device security integration",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "sim",
+              "name": "SIM swap",
+              "signal": "recentSimChange",
+              "action": "Verify",
+              "reason": "A recent SIM change requires additional authentication.",
+              "requires": "Telecom or bank supplied SIM signal",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "apk",
+              "name": "Malicious app",
+              "signal": "unsafeAppAttestation",
+              "action": "Hold",
+              "reason": "Device app attestation reports an unsafe application environment.",
+              "requires": "Native platform attestation",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "takeover",
+              "name": "Account takeover",
+              "signal": "sessionMismatch",
+              "action": "Verify",
+              "reason": "Session identity differs from the established profile.",
+              "requires": "Trusted session and device history",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "mule",
+              "name": "Mule account network",
+              "signal": "fanIn",
+              "action": "Hold",
+              "reason": "Several incoming accounts converge before this onward payment.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "ring",
+              "name": "Coordinated fraud ring",
+              "signal": "cycle",
+              "action": "Hold",
+              "reason": "The candidate payment closes a recent transfer cycle.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "chain",
+              "name": "Multi hop fund transfers",
+              "signal": "chain",
+              "action": "Verify",
+              "reason": "The sender has a recent inbound transfer chain of at least three hops.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "split",
+              "name": "Transaction splitting",
+              "signal": "split",
+              "action": "Verify",
+              "reason": "Several recent payments have a high combined value relative to typical spending.",
+              "requires": "Sender transaction history",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "merchant",
+              "name": "Fake online merchant",
+              "signal": "unverifiedMerchant",
+              "action": "Verify",
+              "reason": "Merchant identity has not been independently verified.",
+              "requires": "Merchant verification service",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "replacement",
+              "name": "Merchant QR replacement",
+              "signal": "merchantIdentityMismatch",
+              "action": "Hold",
+              "reason": "The scanned recipient conflicts with the expected merchant identity.",
+              "requires": "Trusted merchant identity and scanned recipient",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "investment",
+              "name": "Investment or trading scam",
+              "signal": "guaranteedReturnClaim",
+              "action": "Verify",
+              "reason": "A guaranteed return claim needs independent provider verification.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "job",
+              "name": "Fake job or task scam",
+              "signal": "payToUnlockEarnings",
+              "action": "Hold",
+              "reason": "The request asks for a payment to unlock a job or supposed earnings.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "impersonation",
+              "name": "Friend or official impersonation",
+              "signal": "unverifiedUrgentRequest",
+              "action": "Verify",
+              "reason": "An urgent request has not been confirmed through a separate trusted channel.",
+              "requires": "Independent contact verification",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "extortion",
+              "name": "Digital arrest extortion",
+              "signal": "coerciveOfficialDemand",
+              "action": "Hold",
+              "reason": "A coercive official claim is requesting a transfer.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "bot",
+              "name": "Automated or bot abuse",
+              "signal": "bot",
+              "action": "Hold",
+              "reason": "Payment attempt velocity exceeds the configured demonstration limit.",
+              "requires": "Recent sender requests",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            }
+          ],
+          "chainPath": null,
+          "scope": "Demonstration policies on supplied sample context. Missing signals are unavailable, not safe. Flags are not proof of fraud."
+        }
+      }
+    },
+    {
+      "id": "PAY-LARGE-DATA-EXAMPLE",
+      "sender": "hub-01",
+      "receiver": "hub-02",
+      "amount": 25000,
+      "timestamp": "2026-10-30T06:57:46.905Z",
+      "device": "familiar",
+      "title": "DEMO 4 · Large dataset",
+      "description": "Explore a connected neighborhood from 50,000 generated transfers. The surrounding corpus is available as CSV.",
+      "source": "Read-only synthetic exploration corpus",
+      "status": "Held for review",
+      "isGraphExample": true,
+      "graphHistory": [
+        {
+          "sender": "demo-0001",
+          "receiver": "hub-01",
+          "amount": 1050,
+          "timestamp": "2026-10-30T06:56:47.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0002",
+          "receiver": "hub-01",
+          "amount": 1100,
+          "timestamp": "2026-10-30T06:56:48.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0003",
+          "receiver": "hub-01",
+          "amount": 1150,
+          "timestamp": "2026-10-30T06:56:49.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0004",
+          "receiver": "hub-01",
+          "amount": 1200,
+          "timestamp": "2026-10-30T06:56:50.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0005",
+          "receiver": "hub-01",
+          "amount": 1250,
+          "timestamp": "2026-10-30T06:56:51.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0006",
+          "receiver": "hub-01",
+          "amount": 1300,
+          "timestamp": "2026-10-30T06:56:52.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0007",
+          "receiver": "hub-01",
+          "amount": 1350,
+          "timestamp": "2026-10-30T06:56:53.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0008",
+          "receiver": "hub-01",
+          "amount": 1400,
+          "timestamp": "2026-10-30T06:56:54.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0009",
+          "receiver": "hub-03",
+          "amount": 1050,
+          "timestamp": "2026-10-30T06:56:37.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0010",
+          "receiver": "hub-03",
+          "amount": 1100,
+          "timestamp": "2026-10-30T06:56:38.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0011",
+          "receiver": "hub-03",
+          "amount": 1150,
+          "timestamp": "2026-10-30T06:56:39.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0012",
+          "receiver": "hub-03",
+          "amount": 1200,
+          "timestamp": "2026-10-30T06:56:40.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0013",
+          "receiver": "hub-03",
+          "amount": 1250,
+          "timestamp": "2026-10-30T06:56:41.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0014",
+          "receiver": "hub-03",
+          "amount": 1300,
+          "timestamp": "2026-10-30T06:56:42.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0015",
+          "receiver": "hub-03",
+          "amount": 1350,
+          "timestamp": "2026-10-30T06:56:43.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0016",
+          "receiver": "hub-03",
+          "amount": 1400,
+          "timestamp": "2026-10-30T06:56:44.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0017",
+          "receiver": "hub-04",
+          "amount": 1050,
+          "timestamp": "2026-10-30T06:56:27.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0018",
+          "receiver": "hub-04",
+          "amount": 1100,
+          "timestamp": "2026-10-30T06:56:28.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0019",
+          "receiver": "hub-04",
+          "amount": 1150,
+          "timestamp": "2026-10-30T06:56:29.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0020",
+          "receiver": "hub-04",
+          "amount": 1200,
+          "timestamp": "2026-10-30T06:56:30.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0021",
+          "receiver": "hub-04",
+          "amount": 1250,
+          "timestamp": "2026-10-30T06:56:31.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0022",
+          "receiver": "hub-04",
+          "amount": 1300,
+          "timestamp": "2026-10-30T06:56:32.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0023",
+          "receiver": "hub-04",
+          "amount": 1350,
+          "timestamp": "2026-10-30T06:56:33.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "demo-0024",
+          "receiver": "hub-04",
+          "amount": 1400,
+          "timestamp": "2026-10-30T06:56:34.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "hub-04",
+          "receiver": "hub-03",
+          "amount": 9500,
+          "timestamp": "2026-10-30T06:57:21.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        },
+        {
+          "sender": "hub-03",
+          "receiver": "hub-01",
+          "amount": 18000,
+          "timestamp": "2026-10-30T06:57:31.905Z",
+          "settled": true,
+          "scenario": "generated_mule"
+        }
+      ],
+      "assessment": {
+        "paymentId": "PAY-LARGE-DATA-EXAMPLE",
+        "decision": "Flag",
+        "modelScore": 0.7669050994561177,
+        "modelVersion": "RF-SYN-2.0-CAL",
+        "probabilityScope": "Calibrated on separate synthetic data only",
+        "signals": {
+          "amount": 25000,
+          "average": 932,
+          "velocity": 1,
+          "age": 0,
+          "newRecipient": true,
+          "newDevice": false,
+          "night": false,
+          "fanin": 9,
+          "rapid": true,
+          "behavior": 0
+        },
+        "profile": {
+          "count": 13,
+          "average": 947,
+          "median": 932,
+          "recipients": [
+            "demo-0342",
+            "demo-1958",
+            "demo-1619",
+            "demo-2209",
+            "demo-0590",
+            "demo-1489",
+            "demo-1090",
+            "demo-0626",
+            "demo-2542",
+            "demo-0612",
+            "demo-1577",
+            "demo-0575",
+            "demo-2385"
+          ],
+          "baselineAvailable": true
+        },
+        "graph": {
+          "fanin": 9,
+          "rapid": true,
+          "fanInPattern": true,
+          "cycle": false,
+          "cyclePath": [],
+          "windowSeconds": 120,
+          "evidence": [
+            {
+              "sender": "demo-0001",
+              "receiver": "hub-01",
+              "amount": 1050,
+              "timestamp": "2026-10-30T06:56:47.905Z"
+            },
+            {
+              "sender": "demo-0002",
+              "receiver": "hub-01",
+              "amount": 1100,
+              "timestamp": "2026-10-30T06:56:48.905Z"
+            },
+            {
+              "sender": "demo-0003",
+              "receiver": "hub-01",
+              "amount": 1150,
+              "timestamp": "2026-10-30T06:56:49.905Z"
+            },
+            {
+              "sender": "demo-0004",
+              "receiver": "hub-01",
+              "amount": 1200,
+              "timestamp": "2026-10-30T06:56:50.905Z"
+            },
+            {
+              "sender": "demo-0005",
+              "receiver": "hub-01",
+              "amount": 1250,
+              "timestamp": "2026-10-30T06:56:51.905Z"
+            },
+            {
+              "sender": "demo-0006",
+              "receiver": "hub-01",
+              "amount": 1300,
+              "timestamp": "2026-10-30T06:56:52.905Z"
+            },
+            {
+              "sender": "demo-0007",
+              "receiver": "hub-01",
+              "amount": 1350,
+              "timestamp": "2026-10-30T06:56:53.905Z"
+            },
+            {
+              "sender": "demo-0008",
+              "receiver": "hub-01",
+              "amount": 1400,
+              "timestamp": "2026-10-30T06:56:54.905Z"
+            },
+            {
+              "sender": "hub-03",
+              "receiver": "hub-01",
+              "amount": 18000,
+              "timestamp": "2026-10-30T06:57:31.905Z"
+            }
+          ]
+        },
+        "behavior": {
+          "available": false,
+          "deviation": 0
+        },
+        "reasons": [
+          "At least three senders paid this account within 120 seconds before this onward transfer.",
+          "The recipient is not present in this sender’s sample payment history.",
+          "The amount exceeds five times this sender’s typical (median) sample payment.",
+          "No measured interaction comparison was supplied; the demo uses a neutral behavior input.",
+          "Several incoming accounts converge before this onward payment.",
+          "The sender has a recent inbound transfer chain of at least three hops."
+        ],
+        "contributions": [
+          {
+            "name": "Incoming account count",
+            "value": 0.416850642778795,
+            "index": 6
+          },
+          {
+            "name": "Receiver account age",
+            "value": 0.37339051550814,
+            "index": 2
+          },
+          {
+            "name": "New recipient",
+            "value": 0.11572878122551755,
+            "index": 3
+          },
+          {
+            "name": "Rapid onward transfer",
+            "value": 0.06487376983865556,
+            "index": 7
+          }
+        ],
+        "policy": {
+          "verify": 0.2,
+          "flag": 0.65
+        },
+        "timings": {
+          "featuresMs": 0.14476299999998332,
+          "graphMs": 0.36688999999998373,
+          "behaviorMs": 0.00857899999999745,
+          "scoringMs": 10.656177000000042,
+          "policyMs": 0.017735999999985097,
+          "serverTotalMs": 12.855466000000035,
+          "protectionMs": 0.7882759999999962
+        },
+        "settlementPermitted": false,
+        "demo": true,
+        "trustBoundary": "Stateless sandbox assessment using client supplied sample history; no bank authorisation or real settlement.",
+        "intelligence": {
+          "version": "INT-SYN-1.1",
+          "combinedRisk": 0.644931871391415,
+          "combinedRiskScope": "Weighted research risk index, not a calibrated fraud probability",
+          "anomalyScore": 0.6574075619658257,
+          "anomalyEvidence": {
+            "version": "IF-SYN-2.1",
+            "threshold": 0.6671718249363614,
+            "unusual": false,
+            "scope": "Unusualness index, not fraud probability; verification only",
+            "features": [
+              {
+                "name": "Amount versus observed average",
+                "value": 26.824034334763947
+              },
+              {
+                "name": "Recent payment count",
+                "value": 1
+              },
+              {
+                "name": "New recipient",
+                "value": true
+              },
+              {
+                "name": "Experimental behavior deviation",
+                "available": false,
+                "value": null
+              }
+            ]
+          },
+          "graphModel": {
+            "sender": 0.304683868859463,
+            "recipient": 0.000003387991329221079,
+            "nodes": 28,
+            "edges": 26,
+            "senderId": "hub-01",
+            "recipientId": "hub-02",
+            "reviewThreshold": 0.9227751004016064,
+            "links": [
+              {
+                "sender": "demo-0001",
+                "receiver": "hub-01",
+                "amount": 1050
+              },
+              {
+                "sender": "demo-0002",
+                "receiver": "hub-01",
+                "amount": 1100
+              },
+              {
+                "sender": "demo-0003",
+                "receiver": "hub-01",
+                "amount": 1150
+              },
+              {
+                "sender": "demo-0004",
+                "receiver": "hub-01",
+                "amount": 1200
+              },
+              {
+                "sender": "demo-0005",
+                "receiver": "hub-01",
+                "amount": 1250
+              },
+              {
+                "sender": "demo-0006",
+                "receiver": "hub-01",
+                "amount": 1300
+              },
+              {
+                "sender": "demo-0007",
+                "receiver": "hub-01",
+                "amount": 1350
+              },
+              {
+                "sender": "demo-0008",
+                "receiver": "hub-01",
+                "amount": 1400
+              },
+              {
+                "sender": "demo-0009",
+                "receiver": "hub-03",
+                "amount": 1050
+              },
+              {
+                "sender": "demo-0010",
+                "receiver": "hub-03",
+                "amount": 1100
+              },
+              {
+                "sender": "demo-0011",
+                "receiver": "hub-03",
+                "amount": 1150
+              },
+              {
+                "sender": "demo-0012",
+                "receiver": "hub-03",
+                "amount": 1200
+              },
+              {
+                "sender": "demo-0013",
+                "receiver": "hub-03",
+                "amount": 1250
+              },
+              {
+                "sender": "demo-0014",
+                "receiver": "hub-03",
+                "amount": 1300
+              },
+              {
+                "sender": "demo-0015",
+                "receiver": "hub-03",
+                "amount": 1350
+              },
+              {
+                "sender": "demo-0016",
+                "receiver": "hub-03",
+                "amount": 1400
+              },
+              {
+                "sender": "demo-0017",
+                "receiver": "hub-04",
+                "amount": 1050
+              },
+              {
+                "sender": "demo-0018",
+                "receiver": "hub-04",
+                "amount": 1100
+              },
+              {
+                "sender": "demo-0019",
+                "receiver": "hub-04",
+                "amount": 1150
+              },
+              {
+                "sender": "demo-0020",
+                "receiver": "hub-04",
+                "amount": 1200
+              },
+              {
+                "sender": "demo-0021",
+                "receiver": "hub-04",
+                "amount": 1250
+              },
+              {
+                "sender": "demo-0022",
+                "receiver": "hub-04",
+                "amount": 1300
+              },
+              {
+                "sender": "demo-0023",
+                "receiver": "hub-04",
+                "amount": 1350
+              },
+              {
+                "sender": "demo-0024",
+                "receiver": "hub-04",
+                "amount": 1400
+              },
+              {
+                "sender": "hub-04",
+                "receiver": "hub-03",
+                "amount": 9500
+              },
+              {
+                "sender": "hub-03",
+                "receiver": "hub-01",
+                "amount": 18000
+              }
+            ],
+            "accounts": [
+              {
+                "id": "hub-04",
+                "risk": 0.9955323768123648
+              },
+              {
+                "id": "hub-03",
+                "risk": 0.9952632602323669
+              },
+              {
+                "id": "hub-01",
+                "risk": 0.304683868859463
+              },
+              {
+                "id": "demo-0009",
+                "risk": 0.00010505380114485476
+              },
+              {
+                "id": "demo-0010",
+                "risk": 0.00010505380114485476
+              },
+              {
+                "id": "demo-0011",
+                "risk": 0.00010505380114485476
+              },
+              {
+                "id": "demo-0012",
+                "risk": 0.00010505380114485476
+              },
+              {
+                "id": "demo-0013",
+                "risk": 0.00010505380114485476
+              },
+              {
+                "id": "demo-0014",
+                "risk": 0.00010505380114485476
+              },
+              {
+                "id": "demo-0015",
+                "risk": 0.00010505380114485476
+              },
+              {
+                "id": "demo-0016",
+                "risk": 0.00010505380114485476
+              },
+              {
+                "id": "demo-0017",
+                "risk": 0.00010505380114485476
+              }
+            ]
+          },
+          "recipientRisk": 0.350002202194364,
+          "device": {
+            "newDevice": false,
+            "accountsOnDevice": 1,
+            "sharedDevice": false,
+            "source": "User supplied synthetic session context, not trusted device attestation"
+          },
+          "geo": {
+            "available": false,
+            "impossibleTravel": false
+          },
+          "decision": "Flag",
+          "reasons": [],
+          "scoringMs": 10.510413000000028,
+          "calibrationWarning": "Graph model is evaluated on held out synthetic graphs only; never used alone to block a payment.",
+          "temporalGraphModel": {
+            "version": "TEMPORAL-GNN-SYN-2.1",
+            "sender": 0.9999982736884819,
+            "recipient": 0.0007154963955010148,
+            "accounts": [
+              {
+                "id": "hub-01",
+                "evidence": {
+                  "incomingDiversity": 8,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.875,
+                  "circularPath": false
+                },
+                "risk": 0.9999982736884819
+              },
+              {
+                "id": "hub-03",
+                "evidence": {
+                  "incomingDiversity": 8,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.9166666666666666,
+                  "circularPath": false
+                },
+                "risk": 0.9993113009633889
+              },
+              {
+                "id": "hub-04",
+                "evidence": {
+                  "incomingDiversity": 8,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0.6083333333333334,
+                  "circularPath": false
+                },
+                "risk": 0.8363492465168293
+              },
+              {
+                "id": "hub-02",
+                "evidence": {
+                  "incomingDiversity": 1,
+                  "outgoingDiversity": 0,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0007154963955010148
+              },
+              {
+                "id": "demo-0008",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000017151156268811756
+              },
+              {
+                "id": "demo-0007",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000017045990372928246
+              },
+              {
+                "id": "demo-0006",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000016941469312769544
+              },
+              {
+                "id": "demo-0005",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.00001683758913459131
+              },
+              {
+                "id": "demo-0004",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000016734345908889463
+              },
+              {
+                "id": "demo-0003",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.00001663173573025182
+              },
+              {
+                "id": "demo-0002",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000016529754717210264
+              },
+              {
+                "id": "demo-0001",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000016428399012093775
+              },
+              {
+                "id": "demo-0016",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000017922661689240152
+              },
+              {
+                "id": "demo-0015",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000017793984935503734
+              },
+              {
+                "id": "demo-0014",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000001766623202209795
+              },
+              {
+                "id": "demo-0013",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000001753939631629455
+              },
+              {
+                "id": "demo-0012",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000017413471232984465
+              },
+              {
+                "id": "demo-0011",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.000001728845023433648
+              },
+              {
+                "id": "demo-0010",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000017164326829457478
+              },
+              {
+                "id": "demo-0009",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 0.0000017041094574055463
+              },
+              {
+                "id": "demo-0024",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 1.0509498468386539e-7
+              },
+              {
+                "id": "demo-0023",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 1.0443340488861393e-7
+              },
+              {
+                "id": "demo-0022",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 1.0377598978096635e-7
+              },
+              {
+                "id": "demo-0021",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 1.031227131439514e-7
+              },
+              {
+                "id": "demo-0020",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 1.024735489256348e-7
+              },
+              {
+                "id": "demo-0019",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 1.0182847123807926e-7
+              },
+              {
+                "id": "demo-0018",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 1.0118745435631374e-7
+              },
+              {
+                "id": "demo-0017",
+                "evidence": {
+                  "incomingDiversity": 0,
+                  "outgoingDiversity": 1,
+                  "rapidForwardingIndex": 0,
+                  "circularPath": false
+                },
+                "risk": 1.0055047271730926e-7
+              }
+            ],
+            "reviewThreshold": 0.9792771084337349,
+            "nodes": 28,
+            "messagePassingHops": 2,
+            "candidateIncluded": true,
+            "scope": "Synthetic temporal graph index. Candidate edge is hypothetical; not settled. Review signal only."
+          }
+        },
+        "protection": {
+          "decision": "Flag",
+          "triggered": [
+            {
+              "id": "mule",
+              "name": "Mule account network",
+              "signal": "fanIn",
+              "action": "Hold",
+              "reason": "Several incoming accounts converge before this onward payment.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "chain",
+              "name": "Multi hop fund transfers",
+              "signal": "chain",
+              "action": "Verify",
+              "reason": "The sender has a recent inbound transfer chain of at least three hops.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            }
+          ],
+          "checks": [
+            {
+              "id": "qr",
+              "name": "QR code payment scam",
+              "signal": "directionMismatch",
+              "action": "Hold",
+              "reason": "The payment direction conflicts with the stated intention.",
+              "requires": "Trusted intent and payment direction",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "collect",
+              "name": "Unexpected collect request",
+              "signal": "unexpectedCollect",
+              "action": "Verify",
+              "reason": "An unrecognised collect request needs independent confirmation.",
+              "requires": "Collect request metadata",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "refund",
+              "name": "Fake cashback or refund",
+              "signal": "payToReceive",
+              "action": "Hold",
+              "reason": "The flow asks for a debit to receive a refund or reward.",
+              "requires": "Trusted offer and payment direction",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "phishing",
+              "name": "Phishing link",
+              "signal": "untrustedCredentialOrigin",
+              "action": "Hold",
+              "reason": "A credential flow was initiated from an unverified origin.",
+              "requires": "App origin or browser security integration",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "support",
+              "name": "Fake customer support",
+              "signal": "unverifiedSupportPayment",
+              "action": "Verify",
+              "reason": "An unverified support contact is requesting a payment.",
+              "requires": "Verified support channel context",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "remote",
+              "name": "Screen sharing or remote access",
+              "signal": "remoteAccessActive",
+              "action": "Hold",
+              "reason": "A remote access signal is present during payment.",
+              "requires": "Native device security integration",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "sim",
+              "name": "SIM swap",
+              "signal": "recentSimChange",
+              "action": "Verify",
+              "reason": "A recent SIM change requires additional authentication.",
+              "requires": "Telecom or bank supplied SIM signal",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "apk",
+              "name": "Malicious app",
+              "signal": "unsafeAppAttestation",
+              "action": "Hold",
+              "reason": "Device app attestation reports an unsafe application environment.",
+              "requires": "Native platform attestation",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "takeover",
+              "name": "Account takeover",
+              "signal": "sessionMismatch",
+              "action": "Verify",
+              "reason": "Session identity differs from the established profile.",
+              "requires": "Trusted session and device history",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "mule",
+              "name": "Mule account network",
+              "signal": "fanIn",
+              "action": "Hold",
+              "reason": "Several incoming accounts converge before this onward payment.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "ring",
+              "name": "Coordinated fraud ring",
+              "signal": "cycle",
+              "action": "Hold",
+              "reason": "The candidate payment closes a recent transfer cycle.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "chain",
+              "name": "Multi hop fund transfers",
+              "signal": "chain",
+              "action": "Verify",
+              "reason": "The sender has a recent inbound transfer chain of at least three hops.",
+              "requires": "Recent settled transaction graph",
+              "category": "Transaction and graph signals",
+              "status": "Triggered",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "split",
+              "name": "Transaction splitting",
+              "signal": "split",
+              "action": "Verify",
+              "reason": "Several recent payments have a high combined value relative to typical spending.",
+              "requires": "Sender transaction history",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            },
+            {
+              "id": "merchant",
+              "name": "Fake online merchant",
+              "signal": "unverifiedMerchant",
+              "action": "Verify",
+              "reason": "Merchant identity has not been independently verified.",
+              "requires": "Merchant verification service",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "replacement",
+              "name": "Merchant QR replacement",
+              "signal": "merchantIdentityMismatch",
+              "action": "Hold",
+              "reason": "The scanned recipient conflicts with the expected merchant identity.",
+              "requires": "Trusted merchant identity and scanned recipient",
+              "category": "Trusted device, bank or session signals",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "investment",
+              "name": "Investment or trading scam",
+              "signal": "guaranteedReturnClaim",
+              "action": "Verify",
+              "reason": "A guaranteed return claim needs independent provider verification.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "job",
+              "name": "Fake job or task scam",
+              "signal": "payToUnlockEarnings",
+              "action": "Hold",
+              "reason": "The request asks for a payment to unlock a job or supposed earnings.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "impersonation",
+              "name": "Friend or official impersonation",
+              "signal": "unverifiedUrgentRequest",
+              "action": "Verify",
+              "reason": "An urgent request has not been confirmed through a separate trusted channel.",
+              "requires": "Independent contact verification",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "extortion",
+              "name": "Digital arrest extortion",
+              "signal": "coerciveOfficialDemand",
+              "action": "Hold",
+              "reason": "A coercive official claim is requesting a transfer.",
+              "requires": "User report or trusted message analysis",
+              "category": "Reports and external verification",
+              "status": "Unavailable",
+              "source": "Supplied context; not independently verified"
+            },
+            {
+              "id": "bot",
+              "name": "Automated or bot abuse",
+              "signal": "bot",
+              "action": "Hold",
+              "reason": "Payment attempt velocity exceeds the configured demonstration limit.",
+              "requires": "Recent sender requests",
+              "category": "Transaction and graph signals",
+              "status": "Clear",
+              "source": "Derived from supplied sample history"
+            }
+          ],
+          "chainPath": [
+            "demo-0017",
+            "hub-04",
+            "hub-03",
+            "hub-01"
+          ],
+          "scope": "Demonstration policies on supplied sample context. Missing signals are unavailable, not safe. Flags are not proof of fraud."
+        }
+      },
+      "dataset": {
+        "seed": 44771,
+        "transfers": 50000,
+        "accounts": 3100,
+        "visibleHistoryTransfers": 26,
+        "kind": "Synthetic exploration corpus, separate from model training splits"
+      }
+    }
+  ]
+}

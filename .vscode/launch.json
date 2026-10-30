@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug UPI Shield backend",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/dev-server.mjs",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "UPI Shield: Build",
+      "env": { "PORT": "4173" },
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}

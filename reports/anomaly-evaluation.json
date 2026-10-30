@@ -1,0 +1,40 @@
+{
+  "version": "IF-SYN-2.1",
+  "seeds": {
+    "training": 8401,
+    "validation": 8402,
+    "test": 8410,
+    "rareTest": 8420
+  },
+  "trainingCount": 100000,
+  "normalValidationCount": 20000,
+  "reviewThreshold": 0.6671718249363614,
+  "thresholdSelection": "99.5th percentile of normal validation unusualness, before testing",
+  "test": {
+    "precision": 0.9294660514172709,
+    "recall": 0.3525,
+    "falsePositiveRate": 0.00535,
+    "averagePrecision": 0.8627341471846046,
+    "positivePrevalence": 0.16666666666666666,
+    "confusion": {
+      "tn": 19893,
+      "fp": 107,
+      "fn": 2590,
+      "tp": 1410
+    }
+  },
+  "rareTrafficStress": {
+    "precision": 0.25960061443932414,
+    "recall": 0.338,
+    "falsePositiveRate": 0.00482,
+    "averagePrecision": 0.3584610360898725,
+    "positivePrevalence": 0.004975124378109453,
+    "confusion": {
+      "tn": 99518,
+      "fp": 482,
+      "fn": 331,
+      "tp": 169
+    }
+  },
+  "limitations": "Synthetic unusualness benchmark, not fraud accuracy. Unusual legitimate behavior can trigger review. Missing behavioral baseline is represented as unavailable in the payment evidence. No automatic rejection from this model alone."
+}

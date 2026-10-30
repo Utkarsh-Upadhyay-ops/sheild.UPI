@@ -1,0 +1,69 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci --ignore-scripts",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/pay",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/upi-shield-offline",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "api/assess.mjs": {
+      "includeFiles": "dist/**",
+      "maxDuration": 10
+    },
+    "api/workspace.mjs": {
+      "includeFiles": "{dist,lib,migrations}/**",
+      "maxDuration": 30
+    },
+    "api/demo-payments.mjs": {
+      "maxDuration": 30
+    }
+  },
+  "regions": [
+    "iad1"
+  ],
+  "fluid": true,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/pay",
+      "permanent": false
+    }
+  ]
+}

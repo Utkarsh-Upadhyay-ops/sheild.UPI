@@ -1,0 +1,22 @@
+{
+  "name": "upi-shield",
+  "version": "2.0.0",
+  "private": true,
+  "dependencies": {
+    "@neondatabase/serverless": "1.0.2"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "test:shared": "node tests/workspace.test.mjs",
+    "test": "node scripts/test-all.mjs",
+    "build": "node scripts/build.mjs",
+    "predev": "npm run build",
+    "pretest": "npm run build",
+    "format": "prettier --write src api lib scripts tests config .vscode *.json *.md",
+    "format:check": "prettier --check src api lib scripts tests config .vscode *.json *.md"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.13",
+    "prettier": "3.9.10"
+  }
+}

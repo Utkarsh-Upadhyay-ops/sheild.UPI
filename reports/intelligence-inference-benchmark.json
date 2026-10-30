@@ -1,0 +1,30 @@
+{
+  "scope": "Local warmed CPU inference only, GNN plus Isolation Forest. Excludes API, database, network and concurrency. Not end-to-end SLA evidence.",
+  "node": "v24.22.1",
+  "cases": [
+    {
+      "historyEdges": 0,
+      "samples": 200,
+      "p50Ms": 0.0441110000000009,
+      "p95Ms": 0.14342499999999347,
+      "p99Ms": 0.7477289999999925,
+      "maximumMs": 0.8496009999999927
+    },
+    {
+      "historyEdges": 100,
+      "samples": 200,
+      "p50Ms": 1.8162690000000055,
+      "p95Ms": 3.785801000000049,
+      "p99Ms": 5.407226999999978,
+      "maximumMs": 7.525345000000016
+    },
+    {
+      "historyEdges": 500,
+      "samples": 200,
+      "p50Ms": 5.565397999999959,
+      "p95Ms": 8.05938900000001,
+      "p99Ms": 9.305673999999954,
+      "maximumMs": 9.716961999999967
+    }
+  ]
+}

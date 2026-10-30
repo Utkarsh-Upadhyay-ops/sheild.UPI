@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.eol": "\n",
+  "files.exclude": { "**/node_modules": true, "dist": true },
+  "search.exclude": {
+    "**/node_modules": true,
+    "dist": true,
+    "public/upi-shield-offline.html": true
+  },
+  "[python]": { "editor.defaultFormatter": "ms-python.black-formatter" }
+}

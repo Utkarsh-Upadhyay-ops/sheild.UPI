@@ -1,0 +1,69 @@
+{
+  "version": "INT-SYN-1.1",
+  "seed": 411,
+  "scope": "Synthetic stress suite with explicit scenario labels, not representative bank accuracy. Benign and fraudulent cycles can have identical topology.",
+  "threshold": 0.9227751004016064,
+  "modelsModified": false,
+  "groups": [
+    {
+      "pattern": "normal",
+      "graphs": 100,
+      "tp": 0,
+      "fp": 62,
+      "tn": 938,
+      "fn": 0,
+      "precision": 0,
+      "recall": null
+    },
+    {
+      "pattern": "legitimate_hub",
+      "graphs": 100,
+      "tp": 0,
+      "fp": 17,
+      "tn": 983,
+      "fn": 0,
+      "precision": 0,
+      "recall": null
+    },
+    {
+      "pattern": "legitimate_cycle",
+      "graphs": 100,
+      "tp": 0,
+      "fp": 11,
+      "tn": 553,
+      "fn": 0,
+      "precision": 0,
+      "recall": null
+    },
+    {
+      "pattern": "fraud_ring",
+      "graphs": 100,
+      "tp": 14,
+      "fp": 0,
+      "tn": 167,
+      "fn": 386,
+      "precision": 1,
+      "recall": 0.035
+    },
+    {
+      "pattern": "mule_forwarding",
+      "graphs": 100,
+      "tp": 100,
+      "fp": 1,
+      "tn": 822,
+      "fn": 0,
+      "precision": 0.9900990099009901,
+      "recall": 1
+    },
+    {
+      "pattern": "fund_chain",
+      "graphs": 100,
+      "tp": 21,
+      "fp": 1,
+      "tn": 323,
+      "fn": 379,
+      "precision": 0.9545454545454546,
+      "recall": 0.0525
+    }
+  ]
+}

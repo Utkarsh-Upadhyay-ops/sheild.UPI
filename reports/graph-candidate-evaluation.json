@@ -1,0 +1,207 @@
+{
+  "version": "GRAPH-CANDIDATE-2",
+  "seed": 80411,
+  "trainingGraphs": 900,
+  "validationGraphs": 240,
+  "testGraphs": 360,
+  "patterns": [
+    "normal",
+    "legitimate_hub",
+    "legitimate_cycle",
+    "fraud_ring",
+    "mule_forwarding",
+    "fund_chain"
+  ],
+  "deployedModelModified": false,
+  "candidatePromoted": false,
+  "passesSyntheticPromotionGate": false,
+  "decision": "Candidate not promoted: no validation threshold met the precision requirement. The fallback threshold makes no positive predictions on this test split. Deployed model preserved.",
+  "threshold": 0.999,
+  "thresholdSelection": "Validation recall maximum with precision >= .85 and >= 10 positives; fallback .999",
+  "validation": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "averagePrecision": 0.5000611127850695,
+    "confusion": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 3425,
+      "fn": 400
+    }
+  },
+  "baseline": {
+    "precision": 0.37333333333333335,
+    "recall": 0.15555555555555556,
+    "averagePrecision": 0.3388675726930125,
+    "confusion": {
+      "tp": 84,
+      "fp": 141,
+      "tn": 5049,
+      "fn": 456
+    }
+  },
+  "candidate": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "averagePrecision": 0.4684489547386766,
+    "confusion": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 5190,
+      "fn": 540
+    }
+  },
+  "groups": [
+    {
+      "pattern": "normal",
+      "baseline": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": null,
+        "confusion": {
+          "tp": 0,
+          "fp": 63,
+          "tn": 898,
+          "fn": 0
+        }
+      },
+      "candidate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": null,
+        "confusion": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 961,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "pattern": "legitimate_hub",
+      "baseline": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": null,
+        "confusion": {
+          "tp": 0,
+          "fp": 33,
+          "tn": 947,
+          "fn": 0
+        }
+      },
+      "candidate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": null,
+        "confusion": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 980,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "pattern": "legitimate_cycle",
+      "baseline": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": null,
+        "confusion": {
+          "tp": 0,
+          "fp": 32,
+          "tn": 905,
+          "fn": 0
+        }
+      },
+      "candidate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": null,
+        "confusion": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 937,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "pattern": "fraud_ring",
+      "baseline": {
+        "precision": 0.875,
+        "recall": 0.08139534883720931,
+        "averagePrecision": 0.8834123142855049,
+        "confusion": {
+          "tp": 21,
+          "fp": 3,
+          "tn": 750,
+          "fn": 237
+        }
+      },
+      "candidate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": 0.9673672169172239,
+        "confusion": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 753,
+          "fn": 258
+        }
+      }
+    },
+    {
+      "pattern": "mule_forwarding",
+      "baseline": {
+        "precision": 0.8490566037735849,
+        "recall": 0.75,
+        "averagePrecision": 0.836672054556578,
+        "confusion": {
+          "tp": 45,
+          "fp": 8,
+          "tn": 826,
+          "fn": 15
+        }
+      },
+      "candidate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": 0.9747728402640462,
+        "confusion": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 834,
+          "fn": 60
+        }
+      }
+    },
+    {
+      "pattern": "fund_chain",
+      "baseline": {
+        "precision": 0.9,
+        "recall": 0.08108108108108109,
+        "averagePrecision": 0.8166030574522227,
+        "confusion": {
+          "tp": 18,
+          "fp": 2,
+          "tn": 723,
+          "fn": 204
+        }
+      },
+      "candidate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "averagePrecision": 0.8411640691722106,
+        "confusion": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 725,
+          "fn": 222
+        }
+      }
+    }
+  ],
+  "limitations": "Benign cycles and fraudulent rings can be structurally identical. Labels are injected scenario truth; these results do not establish real banking accuracy."
+}

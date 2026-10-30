@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#59229b"><meta name="description" content="ShieldPay: a UPI payment demonstration that shows fraud risk before you pay.">
+  <title>ShieldPay · Check first. Pay with confidence.</title>
+  <link rel="stylesheet" href="mobile-pay.css">
+  <script src="engine.js" defer></script><script src="pipeline.js" defer></script><script src="intelligence.js" defer></script><script src="temporal-graph.js" defer></script><script src="mobile-core.js" defer></script><script src="mobile-evidence.js" defer></script><script src="payment-bridge.js" defer></script><script src="payment-cloud.js" defer></script><script src="payment-help.js" defer></script><script src="mobile-pay.js" defer></script>
+</head>
+<body>
+  <aside class="desktop-intro"><a class="wordmark" href="./pay"><span class="logo">S</span> ShieldPay</a><span class="intro-label">POWERED BY UPI SHIELD</span><h1>A little pause.<br>A safer payment.</h1><p>Your familiar payment journey, with a fraud risk check before the money moves.</p><div class="intro-proof"><span>✓</span><div><b>Know the risk before you pay</b><p>Recipient history, payment patterns and model signals, explained in plain language.</p></div></div><a href="./upi-shield-offline#overview">Open investigator dashboard ↗</a><small>Independent hackathon prototype. Not affiliated with PhonePe, NPCI or a bank.</small></aside>
+  <div class="phone"><header class="topbar"><a class="profile" href="#home" aria-label="ShieldPay home">P</a><a href="#home" class="brand">ShieldPay<small>Protected by UPI Shield</small></a><a class="top-link" href="./upi-shield-offline#overview" aria-label="Open investigator dashboard">↗</a></header><div class="demo-strip">DEMO MODE <span>Sample money only · No real UPI PIN</span></div><main id="mobileApp" aria-live="polite"><section class="card"><h1>Opening ShieldPay…</h1><p>Loading your payment protection.</p></section></main><nav class="bottom-nav" aria-label="Payment navigation"></nav><footer class="demo-footer"><span id="paymentSync" role="status">Connecting to shared Shield history…</span> <button id="retryPaymentSync" type="button">Retry sync</button><br>Public demo activity · No real money movement.</footer></div>
+  <dialog id="riskDialog" aria-labelledby="riskTitle"><div id="riskContent"></div></dialog><div id="toast" role="status"></div>
+</body>
+</html>

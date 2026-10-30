@@ -1,0 +1,9 @@
+# Optional: local notebook validation. Google Colab installs its own runtime dependencies.
+numpy>=1.26,<3
+scikit-learn==1.8.0
+matplotlib>=3.8,<4
+networkx>=3.2,<4
+ipywidgets>=8,<9
+nbformat>=5.10,<6
+nbclient>=0.10,<1
+ipykernel>=6,<8

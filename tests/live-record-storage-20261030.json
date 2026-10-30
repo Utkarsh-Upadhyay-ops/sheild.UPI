@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "recordedAt": "2026-10-30T04:21:19.102Z",
+  "temporalGraphVersion": "TEMPORAL-GNN-SYN-1.1",
+  "temporalReviewThreshold": 0.9910503257345276,
+  "normalRequestMs": 210.946245000001,
+  "normalModelMs": 1.4198940000060247,
+  "normalBackendTiming": {
+    "handlerMs": 47.74181999999564,
+    "databaseReadMs": 21.812535000004573,
+    "databaseReadCalls": 2,
+    "databaseWriteMs": 11.096006000007037,
+    "databaseWriteCalls": 2
+  },
+  "heldRequestMs": 349.8814519999978,
+  "heldModelMs": 1.3155709999919054,
+  "heldBackendTiming": {
+    "handlerMs": 73.05898400000297,
+    "databaseReadMs": 24.449596999998903,
+    "databaseReadCalls": 2,
+    "databaseWriteMs": 32.03285600000527,
+    "databaseWriteCalls": 2
+  },
+  "normalId": "PAY-22e02fae-5298-4c0a-8e63-9da7fa940c3b",
+  "heldId": "PAY-b7a8f6e2-719c-4e95-8b7f-d3b99834e47e",
+  "checks": [
+    "independent authenticated sessions",
+    "shared alert visibility",
+    "ownership isolation",
+    "concurrent single debit",
+    "held settlement restriction",
+    "protected investigator release",
+    "customer state and audit propagation"
+  ],
+  "benchmarkScope": "Network + database authentication + payment creation, assessment and decision writes; no settlement. Measured from executor, not physical devices.",
+  "reports": [
+    {
+      "concurrency": 1,
+      "success": 20,
+      "failures": 0,
+      "P50": 196.66779400000087,
+      "P95": 284.77735300000495,
+      "P99": 346.65165400000114,
+      "max": 346.65165400000114,
+      "modelP95": 6.604116999995313,
+      "backendP95": 81.67406800000754,
+      "databaseReadP95": 42.105354999992414,
+      "databaseWriteP95": 28.81799399999727,
+      "under500": 20,
+      "throughput": 4.666889706503954
+    },
+    {
+      "concurrency": 3,
+      "success": 20,
+      "failures": 0,
+      "P50": 259.3688200000033,
+      "P95": 4527.262913999999,
+      "P99": 4562.269735000002,
+      "max": 4562.269735000002,
+      "modelP95": 0.7111449999938486,
+      "backendP95": 205.86649000000034,
+      "databaseReadP95": 107.09629899999709,
+      "databaseWriteP95": 69.12787900000694,
+      "under500": 17,
+      "throughput": 4.0900753942023185
+    },
+    {
+      "concurrency": 5,
+      "success": 20,
+      "failures": 0,
+      "P50": 338.5551229999983,
+      "P95": 7144.890259,
+      "P99": 7151.965317000002,
+      "max": 7151.965317000002,
+      "modelP95": 1.9459789999999657,
+      "backendP95": 319.215909999999,
+      "databaseReadP95": 152.29761199999484,
+      "databaseWriteP95": 109.12911299998814,
+      "under500": 17,
+      "throughput": 2.794284391089865
+    }
+  ]
+}

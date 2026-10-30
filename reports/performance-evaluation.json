@@ -1,0 +1,81 @@
+{
+  "recordedAt": "2026-10-30T04:21:19.102Z",
+  "modelVersion": "TEMPORAL-GNN-SYN-1.1",
+  "scope": "Network + database authentication + payment creation, assessment and decision writes; no settlement. Measured from executor, not physical devices.",
+  "normalRequestMs": 210.946245000001,
+  "heldRequestMs": 349.8814519999978,
+  "reports": [
+    {
+      "concurrency": 1,
+      "success": 20,
+      "failures": 0,
+      "P50": 196.66779400000087,
+      "P95": 284.77735300000495,
+      "P99": 346.65165400000114,
+      "max": 346.65165400000114,
+      "modelP95": 6.604116999995313,
+      "backendP95": 81.67406800000754,
+      "databaseReadP95": 42.105354999992414,
+      "databaseWriteP95": 28.81799399999727,
+      "under500": 20,
+      "throughput": 4.666889706503954
+    },
+    {
+      "concurrency": 3,
+      "success": 20,
+      "failures": 0,
+      "P50": 259.3688200000033,
+      "P95": 4527.262913999999,
+      "P99": 4562.269735000002,
+      "max": 4562.269735000002,
+      "modelP95": 0.7111449999938486,
+      "backendP95": 205.86649000000034,
+      "databaseReadP95": 107.09629899999709,
+      "databaseWriteP95": 69.12787900000694,
+      "under500": 17,
+      "throughput": 4.0900753942023185
+    },
+    {
+      "concurrency": 5,
+      "success": 20,
+      "failures": 0,
+      "P50": 338.5551229999983,
+      "P95": 7144.890259,
+      "P99": 7151.965317000002,
+      "max": 7151.965317000002,
+      "modelP95": 1.9459789999999657,
+      "backendP95": 319.215909999999,
+      "databaseReadP95": 152.29761199999484,
+      "databaseWriteP95": 109.12911299998814,
+      "under500": 17,
+      "throughput": 2.794284391089865
+    }
+  ],
+  "staticControl": {
+    "scope": "Static SVG control; no database, model or function handler",
+    "reports": [
+      {
+        "concurrency": 1,
+        "P50": 112.77193499999976,
+        "P95": 288.1784859999998,
+        "max": 6069.464395,
+        "failures": 0
+      },
+      {
+        "concurrency": 3,
+        "P50": 98.66373399999975,
+        "P95": 7550.1668420000005,
+        "max": 7635.749693,
+        "failures": 0
+      },
+      {
+        "concurrency": 5,
+        "P50": 128.14236999999775,
+        "P95": 7512.8055939999995,
+        "max": 7514.974561999999,
+        "failures": 0
+      }
+    ]
+  },
+  "interpretation": "Recorded from the executor network. The static control also exhibits multi-second delays. Backend duration and complete HTTP latency are separate measurements; the 500 ms full request requirement is not certified."
+}

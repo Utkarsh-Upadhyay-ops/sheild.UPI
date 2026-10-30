@@ -1,0 +1,1249 @@
+:root {
+  --purple: #5a269b;
+  --dark: #28113f;
+  --muted: #756b80;
+  --line: #e9e3ee;
+  --green: #158460;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f6f3fa;
+  color: var(--dark);
+  font:
+    15px system-ui,
+    -apple-system,
+    sans-serif;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #bc91f0;
+  outline-offset: 3px;
+}
+header {
+  background: var(--purple);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 20px max(24px, calc((100vw - 1120px) / 2));
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 25px #40216620;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 23px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+.brand small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-top: 3px;
+}
+.mark {
+  display: grid;
+  place-items: center;
+  background: white;
+  color: var(--purple);
+  border-radius: 15px;
+  width: 44px;
+  height: 44px;
+  font-size: 29px;
+}
+.environment {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 8px 10px;
+  border: 1px solid #ffffff50;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+.analyst {
+  font-size: 12px;
+  white-space: nowrap;
+}
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 30px 24px;
+  min-height: 70vh;
+}
+h1 {
+  font-size: 32px;
+  letter-spacing: -1px;
+  margin: 8px 0 12px;
+}
+h2 {
+  font-size: 19px;
+  margin: 0 0 14px;
+}
+h3 {
+  font-size: 15px;
+  margin: 0 0 9px;
+}
+p {
+  line-height: 1.75;
+}
+.muted,
+.hint {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+}
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 26px;
+  margin-bottom: 22px;
+  min-width: 0;
+  box-shadow: 0 8px 30px #3f176305;
+}
+.hero {
+  border: 0;
+  color: white;
+  padding: 34px;
+  background: linear-gradient(120deg, #38125d, #6835ad 60%, #9d76d4);
+  position: relative;
+  overflow: hidden;
+}
+.hero:after {
+  content: '';
+  position: absolute;
+  right: -50px;
+  top: -80px;
+  width: 300px;
+  height: 300px;
+  border: 45px solid #ffffff09;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero p {
+  max-width: 500px;
+  color: #eadff7;
+}
+.hero .eyebrow {
+  color: #d7c2f2;
+}
+.balance {
+  font-size: 42px;
+  font-weight: 750;
+  letter-spacing: -1px;
+  margin: 16px 0;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 20px;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--purple);
+  border-radius: 13px;
+  font-weight: 650;
+  font-size: 13px;
+}
+.btn.primary {
+  background: var(--purple);
+  color: white;
+  border-color: var(--purple);
+}
+.btn.danger {
+  background: #fff0f1;
+  color: #b54153;
+  border-color: #f3d7db;
+}
+.btn.full {
+  width: 100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 22px;
+}
+.shortcuts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+.shortcut {
+  border: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px 5px;
+  color: #44334f;
+  font-size: 13px;
+  text-align: center;
+  min-height: 105px;
+}
+.shortcut i {
+  display: grid;
+  place-items: center;
+  background: #f1e8fa;
+  color: var(--purple);
+  border-radius: 17px;
+  width: 52px;
+  height: 52px;
+  font-size: 24px;
+  font-style: normal;
+}
+.shortcut:hover i {
+  background: #e8d7f8;
+  transform: translateY(-3px);
+}
+.contacts {
+  display: flex;
+  gap: 18px;
+  overflow: auto;
+  padding: 12px 0;
+}
+.contact {
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 75px;
+  font-size: 12px;
+  color: #5d4d69;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  background: #f0e5fa;
+  color: #7139a5;
+  font-weight: 700;
+  font-size: 17px;
+}
+.contact:nth-child(2n) .avatar {
+  background: #e6f4ee;
+  color: #227b5b;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+}
+.row:last-child {
+  border: 0;
+}
+.row > div {
+  min-width: 0;
+}
+.row small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+}
+.row strong {
+  white-space: nowrap;
+}
+.status {
+  font-size: 11px;
+  padding: 6px 10px;
+  background: #f2eafa;
+  color: var(--purple);
+  border-radius: 20px;
+  display: inline-block;
+}
+.status.success {
+  background: #e7f5ef;
+  color: #177c56;
+}
+.status.hold {
+  background: #fff0e1;
+  color: #a45e1f;
+}
+.banklogo {
+  width: 100px;
+  height: 36px;
+  object-fit: contain;
+}
+.banktop {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.banktop > div {
+  flex: 1;
+}
+.field {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 18px 0;
+}
+.field input,
+.field select,
+.field textarea {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ded3e8;
+  border-radius: 12px;
+  margin-top: 9px;
+  background: #fffeff;
+  color: var(--dark);
+  font-size: 16px;
+  min-width: 0;
+}
+.amountinput {
+  font-size: 35px !important;
+  font-weight: 700;
+}
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 20px 0;
+}
+.check input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.trust {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #eaf6ef;
+  padding: 18px;
+  border-radius: 14px;
+  font-size: 13px;
+  color: #2b7153;
+  line-height: 1.7;
+}
+.banner {
+  padding: 15px 18px;
+  border: 1px solid #e5d5f0;
+  border-radius: 14px;
+  background: #faf6fe;
+  color: #695078;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+.scenario {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+.scenario button {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 25px;
+  padding: 10px 15px;
+  min-height: 44px;
+  font-size: 12px;
+  color: #736080;
+}
+.scenario button.active {
+  background: #5a269b;
+  color: white;
+  border-color: #5a269b;
+}
+.resulticon {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #e6f5ed;
+  color: #17845c;
+  font-size: 32px;
+  margin: 10px auto 20px;
+}
+.resulticon.hold {
+  background: #fff0e1;
+  color: #aa682d;
+}
+.receipt {
+  text-align: center;
+}
+.receipt h1 {
+  font-size: 25px;
+}
+.receipt .row {
+  text-align: left;
+}
+.receipt .amount {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 14px 0;
+}
+.receipt ul {
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #76637e;
+}
+.timeline {
+  border-left: 2px solid #dbc4ed;
+  margin: 18px 0;
+  padding-left: 18px;
+}
+.timeline p {
+  font-size: 12px;
+}
+.empty {
+  text-align: center;
+  padding: 35px 10px;
+}
+.empty p {
+  font-size: 13px;
+  color: var(--muted);
+}
+#bottom {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  padding: 15px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+#bottom a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #8b7a97;
+  min-width: 80px;
+  min-height: 48px;
+  border-radius: 12px;
+  padding: 6px;
+}
+#bottom a.active {
+  background: #f1e8f9;
+  color: var(--purple);
+  font-weight: 700;
+}
+#bottom span {
+  font-size: 19px;
+}
+footer {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 0 24px 25px;
+  font-size: 11px;
+  color: #8b7b96;
+  line-height: 1.8;
+}
+dialog {
+  padding: 0;
+  border: 0;
+  border-radius: 22px;
+  width: min(470px, 94vw);
+  max-height: 90dvh;
+  color: var(--dark);
+  box-shadow: 0 20px 100px #2f144450;
+}
+dialog::backdrop {
+  background: #20102e80;
+}
+#modalBody {
+  padding: 28px;
+}
+#notice {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #291139;
+  color: white;
+  border-radius: 12px;
+  padding: 13px 20px;
+  z-index: 30;
+  display: none;
+  font-size: 13px;
+  max-width: 90vw;
+}
+#notice.show {
+  display: block;
+}
+.spin {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #dac5eb;
+  border-top-color: var(--purple);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 760px) {
+  header {
+    padding: 16px;
+    gap: 10px;
+  }
+  .brand {
+    font-size: 21px;
+  }
+  .analyst {
+    display: none;
+  }
+  .environment {
+    font-size: 8px;
+    letter-spacing: 0;
+    max-width: 100px;
+    text-align: center;
+  }
+  main {
+    padding: 20px 15px;
+  }
+  h1 {
+    font-size: 27px;
+  }
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .card {
+    padding: 21px;
+    border-radius: 19px;
+  }
+  .hero {
+    padding: 26px;
+  }
+  .balance {
+    font-size: 36px;
+  }
+  .shortcuts {
+    gap: 3px;
+  }
+  .shortcut {
+    font-size: 11px;
+    padding: 12px 2px;
+  }
+  .shortcut i {
+    width: 45px;
+    height: 45px;
+  }
+  #bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    gap: 0;
+    justify-content: space-around;
+    padding: 7px 5px max(7px, env(safe-area-inset-bottom));
+  }
+  #bottom a {
+    min-width: 0;
+    flex: 1;
+    font-size: 10px;
+  }
+  footer {
+    padding-bottom: calc(100px + env(safe-area-inset-bottom));
+  }
+  .actions .btn {
+    flex: 1;
+  }
+  .banklogo {
+    width: 82px;
+  }
+  .banktop {
+    gap: 12px;
+  }
+  .row small {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Responsive authorisation surface, deliberately branded as demonstration only. */
+.btn,
+.shortcut i,
+.contact .avatar {
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.btn:active,
+.shortcut:active i,
+.contact:active .avatar {
+  transform: scale(0.96);
+}
+#app {
+  animation: page-in 0.25s ease both;
+}
+.card {
+  animation: card-in 0.35s ease both;
+}
+.resulticon {
+  animation: result-pop 0.45s ease both;
+}
+.hero {
+  background-size: 150% 150%;
+  animation: hero-glow 12s ease infinite;
+}
+.pin-dialog {
+  width: min(430px, 100vw);
+  max-height: 96dvh;
+  border-radius: 24px;
+  background: #fff;
+}
+.pin-dialog #modalBody {
+  padding: 0;
+}
+.pin-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 650px;
+  max-height: 96dvh;
+}
+.pin-bank {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 24px 22px;
+  border-bottom: 1px solid #e6e8ed;
+}
+.pin-bank b {
+  font-size: 13px;
+  color: #283849;
+}
+.pin-bank small {
+  display: block;
+  font-size: 11px;
+  color: #788692;
+  margin-top: 5px;
+}
+.pin-brand {
+  font-size: 19px;
+  font-weight: 800;
+  color: #542294;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+.pin-brand small {
+  font-size: 7px;
+  letter-spacing: 1px;
+  color: #8963ad;
+}
+.pin-transfer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+  background: #f4f6f8;
+  font-size: 12px;
+  color: #62707c;
+}
+.pin-transfer strong {
+  font-size: 20px;
+  color: #263b50;
+}
+.pin-content {
+  text-align: center;
+  padding: 30px 22px 18px;
+  flex: 1;
+}
+.pin-label {
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  color: #80909a;
+}
+.pin-content h2 {
+  font-size: 17px;
+  font-weight: 550;
+  letter-spacing: 0.3px;
+  margin: 18px 0;
+}
+.pin-demo {
+  font-size: 11px;
+  background: #f6effd;
+  border-radius: 9px;
+  padding: 10px;
+  color: #704890;
+}
+.pin-slots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 18px 0;
+  margin: 10px 0;
+}
+.pin-slot {
+  width: 29px;
+  height: 38px;
+  border-bottom: 2px solid #c1c8d0;
+  position: relative;
+  transition: border-color 0.15s;
+}
+.pin-slot.current {
+  border-color: #573190;
+}
+.pin-slot.filled:after {
+  content: '';
+  width: 11px;
+  height: 11px;
+  background: #283849;
+  position: absolute;
+  left: 9px;
+  top: 10px;
+  border-radius: 50%;
+  animation: dot-in 0.16s ease;
+}
+.pin-message {
+  font-size: 11px;
+  line-height: 1.6;
+  min-height: 36px;
+  color: #747f8c;
+  margin: 0;
+}
+.pin-safety {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #6a7985;
+  max-width: 300px;
+  margin: 12px auto 0;
+}
+.pin-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: #e7ebef;
+  border-top: 1px solid #e1e6eb;
+}
+.pin-keypad button {
+  border: 0;
+  background: #f5f7fa;
+  color: #244a75;
+  min-height: 62px;
+  font-size: 27px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background 0.12s,
+    transform 0.1s;
+}
+.pin-keypad button:active {
+  background: #dce8f5;
+  transform: scale(0.97);
+}
+.pin-keypad .pin-submit {
+  background: #284e79;
+  color: white;
+  font-size: 26px;
+  margin: 9px 28px;
+  border-radius: 50%;
+  min-height: 44px;
+}
+.pin-submit .spin {
+  width: 19px;
+  height: 19px;
+  border-color: #ffffff60;
+  border-top-color: white;
+}
+.pin-cancel {
+  background: white;
+  color: #738190;
+  border: 0;
+  padding: 16px;
+  font-size: 12px;
+  min-height: 48px;
+}
+.pin-shake {
+  animation: pin-shake 0.28s ease;
+}
+.pin-dialog::backdrop {
+  background: #131f32a6;
+  backdrop-filter: blur(5px);
+}
+@keyframes dot-in {
+  from {
+    transform: scale(0.3);
+    opacity: 0.3;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes pin-shake {
+  25%,
+  75% {
+    transform: translateX(-6px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes result-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes hero-glow {
+  50% {
+    background-position: 100% 100%;
+  }
+}
+@media (max-width: 600px) {
+  .pin-dialog {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    margin: 0;
+  }
+  .pin-shell {
+    min-height: 100dvh;
+    max-height: none;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pin-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 22px;
+  }
+  .pin-bank {
+    padding: 18px 20px;
+  }
+  .pin-transfer {
+    padding: 16px 20px;
+  }
+  .pin-keypad button {
+    min-height: 64px;
+  }
+  .pin-keypad .pin-submit {
+    margin: 10px max(20px, calc((100vw / 3 - 48px) / 2));
+    min-height: 44px;
+  }
+  .pin-slot {
+    width: 30px;
+  }
+  .pin-brand {
+    font-size: 18px;
+  }
+  .hero .actions .btn {
+    font-size: 12px;
+  }
+  .row {
+    overflow-wrap: anywhere;
+  }
+  .receipt .row > small {
+    min-width: 0;
+    text-align: right;
+  }
+}
+@media (max-height: 690px) {
+  .pin-content {
+    padding: 10px 20px;
+  }
+  .pin-content h2 {
+    margin: 10px 0;
+  }
+  .pin-slots {
+    padding: 8px 0;
+    margin: 5px 0;
+  }
+  .pin-keypad button {
+    min-height: 51px;
+  }
+  .pin-bank {
+    padding: 12px 20px;
+  }
+  .pin-shell {
+    min-height: 0;
+  }
+  .pin-safety {
+    margin-top: 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Five primary destinations; account management stays on Home. */
+#bottom a {
+  min-width: 0;
+  min-height: 54px;
+  white-space: normal;
+  text-align: center;
+}
+#bottom a span {
+  flex-shrink: 0;
+}
+.card,
+.receipt,
+.banner {
+  animation: none !important;
+}
+.actions {
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  #bottom a {
+    padding: 8px 3px;
+    font-size: 10px;
+    line-height: 1.25;
+  }
+  .actions > .btn {
+    flex: 1 1 140px;
+  }
+  .row {
+    min-width: 0;
+    gap: 12px;
+  }
+  .row > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Aligned surfaces and short, purposeful interaction feedback. */
+.customer-view {
+  min-width: 0;
+}
+.customer-view.route-enter {
+  animation: shield-reveal 220ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+.balance-card .row {
+  align-items: center;
+}
+.balance-card .amount {
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 8px 0 6px;
+  letter-spacing: -0.8px;
+  font-variant-numeric: tabular-nums;
+}
+.card {
+  transition:
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+.card:hover {
+  transform: none;
+  border-color: #ded2eb;
+  box-shadow: 0 10px 32px #3f17630b;
+}
+.btn,
+.contact,
+#bottom a {
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+.btn:active,
+.contact:active {
+  transform: scale(0.98);
+}
+.field input,
+.field select,
+.field textarea {
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #8853b3;
+  box-shadow: 0 0 0 3px #6e34a112;
+}
+.actions {
+  align-items: center;
+  gap: 12px;
+}
+.actions .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  line-height: 1.35;
+}
+.grid {
+  align-items: start;
+}
+.row {
+  gap: 16px;
+  align-items: center;
+}
+.receipt .row {
+  align-items: flex-start;
+}
+.receipt .row > b {
+  text-align: right;
+}
+#bottom a {
+  display: grid;
+  grid-template-rows: 22px 28px;
+  align-content: center;
+  justify-items: center;
+  gap: 3px;
+  min-width: 90px;
+  min-height: 65px;
+  padding: 7px 10px;
+}
+#bottom a span {
+  line-height: 22px;
+}
+dialog[open] {
+  animation: shield-dialog-in 170ms ease both;
+}
+.demo-scenarios summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 3px 0;
+}
+.demo-scenarios[open] summary {
+  margin-bottom: 14px;
+}
+@keyframes shield-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes shield-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (hover: hover) {
+  .btn:hover:not(:disabled),
+  .contact:hover {
+    transform: translateY(-1px);
+  }
+}
+@media (max-width: 600px) {
+  header {
+    gap: 12px;
+    padding: 16px;
+  }
+  .brand {
+    font-size: 20px;
+  }
+  .card {
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 18px;
+  }
+  .balance-card .row {
+    align-items: flex-start;
+  }
+  .balance-card .status {
+    max-width: 110px;
+    text-align: center;
+  }
+  #bottom {
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
+    gap: 2px;
+  }
+  #bottom a {
+    min-width: 0;
+    min-height: 64px;
+    padding: 5px 2px;
+    font-size: 10px;
+  }
+  .actions {
+    gap: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .customer-view.route-enter,
+  dialog[open] {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (max-width: 360px) {
+  .balance-card .row {
+    flex-wrap: wrap;
+  }
+}
+
+/* Match the dashboard type system without changing ShieldPay branding. */
+:root {
+  --interface-font: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+body {
+  font-family: var(--interface-font);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1 {
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.btn,
+.scenario button {
+  font-weight: 600;
+}
+.hint,
+.banner,
+.timeline {
+  line-height: 1.65;
+}
+.amount,
+.amountinput,
+.paymenthistory strong {
+  font-variant-numeric: tabular-nums;
+}
+.scenario {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.scenario button {
+  min-width: 0;
+  white-space: normal;
+  text-align: left;
+  line-height: 1.45;
+  padding: 12px;
+  border-radius: 10px;
+}
+.grid > *,
+.row > * {
+  min-width: 0;
+}
+@media (max-width: 360px) {
+  .scenario {
+    grid-template-columns: 1fr;
+  }
+}

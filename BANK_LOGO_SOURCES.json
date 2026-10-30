@@ -1,0 +1,61 @@
+{
+  "sbi": {
+    "file": "sbi.svg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/State_Bank_of_India.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "bytes": 4860
+  },
+  "icici": {
+    "file": "icici.png",
+    "url": "https://www.icici.bank.in/content/dam/icicibank-revamp/images/icici-logo/icici-header-logo.png",
+    "bytes": 4033
+  },
+  "axis": {
+    "file": "axis.svg",
+    "url": "https://www.axis.bank.in/assets/images/logo.svg",
+    "bytes": 3732
+  },
+  "kotak": {
+    "file": "kotak.svg",
+    "url": "https://www.kotak.bank.in/content/dam/Kotak/svg-icons/navigation/kmbl-logo.svg",
+    "bytes": 6478
+  },
+  "bob": {
+    "file": "bob.svg",
+    "url": "https://bankofbaroda.bank.in/-/media/project/bob/countrywebsites/india/icons/bob-logo.svg",
+    "bytes": 18128
+  },
+  "pnb": {
+    "file": "pnb.png",
+    "url": "https://pnb.bank.in/images/logo.png",
+    "bytes": 13047
+  },
+  "canara": {
+    "file": "canara.webp",
+    "url": "https://www.canarabank.bank.in/documents/20126/0/logo-white.png"
+  },
+  "union": {
+    "file": "union.png",
+    "url": "https://www.unionbankofindia.bank.in/img/header/ubi_logo.png",
+    "bytes": 8147
+  },
+  "idfc": {
+    "file": "idfc.svg",
+    "url": "https://www.idfcfirst.bank.in/content/dam/idfcfirstbank/images/n1/IDFC-logo-website.svg",
+    "bytes": 2945
+  },
+  "indusind": {
+    "file": "indusind.png",
+    "url": "https://www.indusind.bank.in/etc/clientlibs/indusind-platform/assets/img/brand/favicon-192x192.png",
+    "bytes": 16883
+  },
+  "hdfc": {
+    "file": "hdfc.svg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/HDFC_Bank_Logo.svg",
+    "bytes": 6953
+  },
+  "yes": {
+    "file": "yes.png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Yes_Bank_Logo_in_2024.png",
+    "bytes": 105347
+  }
+}

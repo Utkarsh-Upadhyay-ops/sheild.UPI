@@ -1,0 +1,7 @@
+{
+  "seed": 44771,
+  "transfers": 50000,
+  "accounts": 3100,
+  "visibleHistoryTransfers": 26,
+  "kind": "Synthetic exploration corpus, separate from model training splits"
+}

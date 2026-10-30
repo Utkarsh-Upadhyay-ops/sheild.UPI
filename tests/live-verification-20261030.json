@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "normalRequestMs": 152.08929199999875,
+  "normalModelMs": 0.09869300003629178,
+  "heldRequestMs": 204.21892500000104,
+  "heldModelMs": 0.217787999950815,
+  "normalId": "PAY-4066a3d2-5a5d-4cb8-8cce-e5a9f1bfbc5b",
+  "heldId": "PAY-78d57d9d-4ba4-4855-96cb-e58de6cb2f05",
+  "checks": [
+    "independent authenticated sessions",
+    "shared alert visibility",
+    "ownership isolation",
+    "concurrent single debit",
+    "held settlement restriction",
+    "protected investigator release",
+    "customer state and audit propagation"
+  ],
+  "benchmarkScope": "Network + database authentication + assessment; no benchmark ledger writes. Measured from executor, not the phone.",
+  "reports": [
+    {
+      "concurrency": 1,
+      "success": 20,
+      "failures": 0,
+      "P50": 130.9687250000061,
+      "P95": 174.38967299999786,
+      "P99": 207.2720890000055,
+      "max": 207.2720890000055,
+      "modelP95": 0.13497999997343868,
+      "under500": 20,
+      "throughput": 7.077281178640206
+    },
+    {
+      "concurrency": 3,
+      "success": 20,
+      "failures": 0,
+      "P50": 127.25608999999531,
+      "P95": 7329.391097,
+      "P99": 7336.848528000002,
+      "max": 7336.848528000002,
+      "modelP95": 0.10845400003017858,
+      "under500": 18,
+      "throughput": 2.7242774998196384
+    },
+    {
+      "concurrency": 5,
+      "success": 20,
+      "failures": 0,
+      "P50": 163.08269899999868,
+      "P95": 7705.583695000001,
+      "P99": 7781.048584999997,
+      "max": 7781.048584999997,
+      "modelP95": 0.9068459999980405,
+      "under500": 15,
+      "throughput": 2.4437484662660434
+    }
+  ]
+}
